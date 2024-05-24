@@ -1,0 +1,35 @@
+.wrapper{
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    align-items: center;
+    
+}
+.head{
+    background-color: #242754;
+    width: 36vw;
+    height: 8.8vw;
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 4%;
+    transform: translate(90%);
+    
+}
+.body{
+    background-color: #242754;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 3%;
+    justify-content: flex-end;
+}
+.right{
+    width: 47vw;
+    margin-right: 2%;
+    font-weight: 600;
+    font-size: 35px;
+    
+}

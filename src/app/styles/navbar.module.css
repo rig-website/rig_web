@@ -1,0 +1,71 @@
+@import url(https://fonts.google.com/share?selection.family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700);
+@import url(https://fonts.google.com/share?selection.family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700|Source+Sans+3:ital,wght@0,200..900;1,200..900);
+
+
+.navbar {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+    background-color: #E9EDFB;
+    overflow: hidden;
+   
+
+  }
+  .logo{
+    width: 32vw;
+  }
+  
+  
+  
+  .links {
+    width: 42vw;
+    height: 2.3vw;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-transform: capitalize;
+    font-family: "Istok web",sans;
+    font-weight :100;
+    color: #2B4257;
+    
+  }
+  
+  .rig{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 40px;
+    width:5.8vw;
+    height: 10.5vh;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem 5rem;
+    color: #000;
+    
+  }
+  .login{
+    background-color: #2D2B47;
+    color:#fff;
+    width:4vw;
+    height: 4vh;
+    border-radius: 0.4rem;
+    text-align: center;
+    padding: 0.2rem;
+    
+    text-transform: capitalize;
+  }
+  .text{
+    width:3.3vw;
+    height: 2.5vh;
+
+  }
+  .toggle{
+    display: none;
+  }
+ 
+  
+  
+  

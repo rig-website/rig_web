@@ -1,0 +1,70 @@
+/* styles/carousel.module.css */
+
+.body {
+    background-color:aliceblue;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background-color:aliceblue;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    margin: 10px;
+}
+
+.cardcontent {
+    padding: 20px;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    
+}
+
+.nameproject {
+    margin-top: 15px;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #000;
+
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mySwiper {
+    padding: 20px 0;
+}
+
