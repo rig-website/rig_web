@@ -19,9 +19,9 @@ const Carousel = () => {
 
   return (
     
-    
+    <>
+    <div className={styles.title}><div>OUR PROJECTS</div></div>
     <div className={styles.body}>
-    
       <div className={styles.container}>
         <Swiper
           onSwiper={setSwiperRef}
@@ -50,6 +50,7 @@ const Carousel = () => {
         </Swiper>
       </div>
     </div>
+    </>
   );
 };
 
