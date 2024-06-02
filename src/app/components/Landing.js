@@ -5,7 +5,7 @@ export const Landing = () => {
   return (
     <> 
     <div className={styles.landing}>
-    <div className={styles.box}></div>
+    {/* <div className={styles.box}></div> */}
     <div className={styles.hero}>
         <div className={styles.img}>
         <Image src="/landing.jpg" layout='fill'  />

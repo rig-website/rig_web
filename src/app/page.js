@@ -3,16 +3,16 @@ import Landing from "./components/Landing"
 import Carousel from "./components/Carousel"
 import Events from "./components/Events"
 import Content from "./components/Content"
+import Projects from "./Projects/page"
 
 const page = () => {
   return (
-    <div>
-      <<Navbar/>
+    <>
+      <Navbar/>
       <Landing/>
       <Carousel/>
-      <Content/>>
-      
-    </div>
+      <Content/>
+    </>
   )
 }
 
