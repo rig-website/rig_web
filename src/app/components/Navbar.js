@@ -7,7 +7,7 @@ const Navbar = () => {
     <> <div className={styles.navbar}>
     <div className={styles.logo}>
         <Link href="/">
-            <Image src="/nitc-logo-white-01.svg" width={200} height={150} />
+            <Image src="/nitc-logo-white-02.svg" width={280} height={150} />
         </Link>
     </div>
     <div className={styles.links}>
@@ -30,6 +30,7 @@ const Navbar = () => {
     </div>
     
   </div>
+  <div className={styles.box}></div>
   </>
   )
 }
