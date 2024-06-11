@@ -1,11 +1,11 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation'; // Correct import for App Router
+import { useRouter } from 'next/navigation'; 
 import styles from "@/app/signup/style.module.css"
 import Link from 'next/link';
 
 export default function SignupPage() {
-    const router = useRouter(); // Use `useRouter` from `next/navigation`
+    const router = useRouter(); // Use useRouter from next/navigation
     const [user, setUser] = useState({
         rigid: "",
         email: "",
