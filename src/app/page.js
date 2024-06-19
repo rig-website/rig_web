@@ -3,7 +3,8 @@ import Landing from "./components/Landing"
 import Carousel from "./components/Carousel"
 import Events from "./components/Events"
 import Content from "./components/Content"
-import Projects from "./Projects/page"
+import Contact from "./components/Contact"
+import Team from "./components/TeamDash"
 
 const page = () => {
   return (
@@ -12,6 +13,8 @@ const page = () => {
       <Landing/>
       <Carousel/>
       <Content/>
+      {/* <TeamDash/> */}
+      <Contact/>
     </>
   )
 }
