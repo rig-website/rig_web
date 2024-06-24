@@ -1,17 +1,17 @@
 .wrapper{
     width: 100%;
     /* min-height: 100vh; */
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     align-items: center;
     display: flex;
     flex-direction: column;
-    
+    color: black;
 }
 .head{
-    background-color: #242754;
-    width: 20vw;
+    background-color: white;
+    width: 100vw;
     height: 5vw;
-    color: white;
+    color: black;
     font-size: 30px;
     font-weight: bolder;
     text-transform: uppercase;
@@ -22,7 +22,7 @@
     
 }
 .body{
-    background-color: #242754;
+    background-color: white;
     display: flex;
     width: 100%;
     /* min-height: 100vh; */

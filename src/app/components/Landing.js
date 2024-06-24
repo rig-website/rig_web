@@ -1,6 +1,8 @@
 import styles from "@/app/styles/landing.module.css"
 import Image from "next/image"
 
+
+
 export const Landing = () => {
   return (
     <> 
@@ -10,12 +12,10 @@ export const Landing = () => {
         <div className={styles.img}>
         <Image src="/landing.jpg" layout='fill'  />
         </div>
-        
       <div className={styles.right}>
           <div className={styles.text}>latest news....
           <hr></hr>
           </div>
-          
       </div>
     </div>
       
