@@ -1,13 +1,20 @@
+"use client"
 import Image from "next/image"
 import styles from "@/app/styles/navbar.module.css"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 const Navbar = () => {
+  const router = useRouter();
+  const handleOnclick = () =>{
+    router.push('/login')
+  }
+
   return (
     <> <div className={styles.navbar}>
     <div className={styles.logo}>
         <Link href="/">
-            <Image src="/nitc-logo-white-01.svg" width={200} height={150} />
+            <Image src="/nitc-logo-white-02.svg" width={280} height={150} />
         </Link>
     </div>
     <div className={styles.links}>
@@ -16,24 +23,21 @@ const Navbar = () => {
       <div className={styles.projects}><Link href="/Projects">projects</Link></div>
       <div className={styles.achievements}><Link href="/Achievements">achievements</Link></div>
       <div className={styles.events}><Link href="/Events">events</Link></div>
-      <div className={styles.team}><Link href="/Team">team</Link></div>
+      <div className={styles.team}><Link href="/team">team</Link></div>
       <div className={styles.contacts}><Link href="/Contact">contacts</Link></div>
-      <Link href="/login">
       <button className={styles.login}>
-        <div className={styles.text}>login</div>
+        <div className={styles.text}
+        onClick={handleOnclick}
+        
+        
+        >login</div>
       </button>
-      </Link>
     </div>
     <div className={styles.rig}>rig</div>
-    <div className={styles.toggle}>
-      <span></span>
-      <span></span>
-      <span></span>
     </div>
-    
-  </div>
   </>
   )
 }
 
-export default Navbar
+
+export default Navbar;
