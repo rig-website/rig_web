@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; 
 import styles from "@/app/signup/style.module.css"
 import Link from 'next/link';
+import axios from 'axios';
+
 
 export default function SignupPage() {
     const router = useRouter(); // Use useRouter from next/navigation
@@ -17,12 +19,14 @@ export default function SignupPage() {
     const onSignup = async () => {
         try {
             setLoading(true);
-            // Simulating an API request. Replace this with your actual API call.
-            setTimeout(() => {
+            const response = await axios.post('/api/signup', user);
+
+            if (response.status === 201) {
                 console.log("Signup Success");
-                setLoading(false);
                 router.push('/login');
-            }, 1000);
+            } else {
+                console.log("Signup failed");
+            }
         } catch (error) {
             console.log("Signup failed");
             setLoading(false);

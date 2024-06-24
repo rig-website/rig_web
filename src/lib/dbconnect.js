@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 function ConnectionObj() {
     return {
-        isConnected: null  
+        isConnected:false 
     };
 }
 const connection = ConnectionObj();

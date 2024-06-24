@@ -18,9 +18,11 @@ const Navbar = () => {
       <div className={styles.events}><Link href="/Events">events</Link></div>
       <div className={styles.team}><Link href="/Team">team</Link></div>
       <div className={styles.contacts}><Link href="/Contact">contacts</Link></div>
+      <Link href="/login">
       <button className={styles.login}>
         <div className={styles.text}>login</div>
       </button>
+      </Link>
     </div>
     <div className={styles.rig}>rig</div>
     <div className={styles.toggle}>

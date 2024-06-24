@@ -4,6 +4,9 @@ import Carousel from "./components/Carousel"
 import Events from "./components/Events"
 import Content from "./components/Content"
 
+import { configDotenv } from "dotenv";
+configDotenv();
+
 const page = () => {
   return (
     <div>

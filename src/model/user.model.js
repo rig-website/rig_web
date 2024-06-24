@@ -15,11 +15,11 @@ const MessageSchema = new Schema({
 
 const userSchema = new Schema({
     rigid: {
-      type: Number,
+      type: String,
       required: true,
       unique: true
     },
-    password: {
+    passkey: {
       type: String,
       required: true
     },
@@ -37,9 +37,9 @@ const userSchema = new Schema({
   });
 
 
-const UserModel = (mongoosee.models.User) || mongoose.model("User",userSchema);
+  export const User = (mongoose.models.User) || mongoose.model("User",userSchema);
 
-export default UserModel;
+
 
 
 
