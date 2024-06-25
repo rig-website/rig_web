@@ -74,7 +74,10 @@ const MyComponent = () => {
                             This technical marvel is poised to play a pivotal role in shaping the future landscape of underwater robotics research and development.`
     },
     {
-      name: ""
+      name: "Multi Robot UAV Robot",
+      image: '../card3.jpg',
+      description: `According to the report of United Nations global production must be increased by at least 70% to feed a growing population. ’Smart Farming’ -the term refers to the practice of farming more efficiently with the assistance of advanced technology that has been successful in increasing the overall production.
+      <br/>The soil parameters like fertility, moisture etc.. can be monitored by collecting data from the soil using Unmanned Aerial Vehicles(UAVs). The major disadvantage of conventional UAVsused in smart farming is that their rotational and translational dynamics are coupled and hence they cannot directly interact with the crops. This limitation can be solved by introducing fully/over-actuated multi-rotor UAVs. This can be achieved by using fixed rotors at different orientations or actively tilting the rotors by separate actuation. Thus, the UAVs can collect data from the soil, collect uninterrupted continuous images of the field, and do airborne manipulations. However, existing fully actuated UAVs are not optimised for usage in agricultural fields. They have very less flight time and low payload capacity. This project aims the development of a fully actuated multi-rotor UAV for soil map generation through on-the-go soil data collection. The main objective of this project is to generate a soil map by soil data collection using a separate sensor-based measurement system using a fully actuated multi-rotor UAV.`
     },
   ];
 
@@ -97,14 +100,47 @@ const MyComponent = () => {
 const MiniComponent = () => {
   const miniProjects = [
     {
-      name: "Mini Project 1",
-      description: `This is a brief description of Mini Project 1. It includes some interesting details and highlights of the project.`,
-      image: '../mini1.jpg',
+      name: "Holonomic Drive with Mecanum Wheel Base",
+      image: '../mcard1.jpg',
+      description: `The holonomic drive system is a specialized method of locomotion in robotics that allows for omnidirectional movement. Unlike conventional drives that require turning to change direction, holonomic drives can move in any direction without changing the orientation of the robot. This is achieved through specialized wheel configurations or mechanisms like omni wheels or mecanum wheels. Mecanum wheels are equipped with rollers set at an angle of 45 degrees to the main axis, which enable the wheels to generate forces in multiple directions when rotated, allowing for forward, backward, sideways and diagonal motion without necessitating changes in orientation. The overall movement of the base in any direction and rotation can be controlled simultaneously by controlling the direction and speed of each wheel individually. Present control involves use of 4 NodeMCUs to control the 4 motors. Locomotion can be achieved using both keyboard and joystick control.`,
     },
     {
-      name: "Mini Project 2",
-      description: `This is a brief description of Mini Project 2. It includes some interesting details and highlights of the project.`,
-      image: '../mini2.jpg',
+      name: "Rubber Tamping Machine",
+      image: '../mcard2.jpg',
+      description: `In a groundbreaking development for the rubber tapping industry, our latest product introduces an Automatic Tapping Machine with a focus on unparalleled precision and efficiency. At the core of this innovation is an automatic tapper, meticulously engineered to tap rubber with the utmost accuracy, ensuring optimal productivity while safeguarding the tree's cambium through an integrated mechanical sensor. This cutting-edge technology, driven by rack and pinion mechanisms, orchestrates seamless up-and-down and to-and-fro motions. Complementing the automatic tapper is a robust mobile base, featuring a caterpillar track that enables smooth navigation across rough terrains in plantations. Equipped with camera and object sensors, the mobile base ensures the machine moves along a predetermined track from tree to tree, revolutionizing the rubber tapping process with a perfect blend of precision, sustainability, and adaptability to various terrains.`,
+    },
+    {
+      name: "Avibot Robot",
+      image: '../mcard3.jpg',
+      description: `The designed farming robot serves the purpose of efficient floor egg collection in indoor free-range poultry farms, addressing challenges such as hays and dust. Equipped with advanced sensors and software, the robot employs a novel and gentle end effector—balloon grippers—to pick up eggs without causing impact. The end effector is intricately designed for delicate handling of eggs in a challenging environment. The robot's chassis is constructed from robust aluminum extrusions, providing durability essential for navigating rough terrains commonly found in farms. Its three-wheel configuration allows for tight turns, enhancing maneuverability. The locomotion system is powered by high-torque motors and larger wheels, ensuring the robot can traverse difficult farm conditions effectively. For accurate egg detection, the robot initially employs the Single Shot Detector (SSD) algorithm, a proven method for object detection. This algorithm, integrated into the robot's software, enables precise identification and localization of eggs within the farm environment. The combination of advanced hardware, gentle end effector design, and sophisticated object detection algorithms makes this farming robot an efficient and reliable solution for indoor free-range poultry farms with challenging conditions.`
+    },
+    {
+      name: "Hospital Bed",
+      image: '../mcard4.jpg',
+      description: `The innovative bed repositioning system is engineered to combat bedsores in bedridden individuals by facilitating controlled movements in both the sagittal and transverse planes. A single motor orchestrates gentle turning on both sides along the sagittal plane, while independent motors manage precise upper and lower body movements in the transverse plane. The system is operated through a user-friendly remote, providing both caretakers and patients with efficient control over adjustments. Notably, the bed's design incorporates customizable link lengths at revolute joints, allowing for adaptation to different patient heights, thus optimizing comfort during repositioning. What sets this solution apart is its cost-effective design, utilizing only three actuators, ensuring affordability and accessibility for a wider population. In essence, this technologically advanced bed repositioning system represents a significant leap in patient care, offering a holistic, customizable, and affordable approach to enhancing the well-being of bedridden individuals while effectively preventing the development of bedsores.`
+    },
+    {
+      name: "Origami bot",
+      image: '../mcard5.jpg',
+      description: `The soldier's kit utilizes origami techniques for a strong, lightweight, and portable design that transforms into four utilities: boat, tent, shield, and carrying bag. This innovative approach ensures durability while meeting the soldier's diverse needs in the field—offering quick water transportation, a deployable shelter, portable defense capabilities, and convenient transportation when not in use. The kit's technical efficiency underscores its adaptability to the dynamic requirements of military operations.`
+    },
+    {
+      name: "Patient transfer Bed",
+      image: '../mcard6.jpg',
+      description: `In the pursuit of advancing patient care, our project introduces an innovative Patient Transfer System that seamlessly integrates cutting-edge technology with a mobile base. The system's intelligent design allows for effortless transformations between bed, intermediate, and chair positions, facilitated by a top and bottom rotation mechanism utilizing a lead screw for smooth conversion. A crucial feature is the lifting mechanism powered by an electric car jack, providing an adjustable bed with a height range from 0.55 to 1 meter. The mobile base, equipped with two active wheels at the center and four passive castor wheels at the corners, ensures stability and precise maneuverability. Electronic circuits govern the entire system, employing Cytrone dual-channel motor drivers, an Arduino AtMega, limit switches, and a user-friendly controller with DPST switches and an Arduino joystick dual-axis module. This breakthrough system not only enhances patient comfort during transfers but also prioritizes efficiency, safety, and adaptability, promising to redefine standards in patient care.`
+    },
+    {
+      name: "Quadruped",
+      image: '../mcard7.jpg',
+      description: `This project embarks on an innovative exploration in robotics, drawing inspiration from the biomechanics of large mammals, particularly elephants. The initiative stems from a meticulous study of elephant locomotion patterns, leading to the adoption of an ample gait for stability—a characteristic feature seen in heavy-weight animals. The chosen gait pattern, distributed weight-bearing, and three-link leg structure contribute significantly to the robot’s stability, diverging from the conventional two-legged models optimized for speed. Moreover, the exploration extends beyond limb mechanics, envisioning a trunk system inspired by snake-like robots, enhancing the robot's manipulation capabilities. This project delve into multidisciplinary aspects of robotics, from theoretical modeling to practical fabrication and control
+                            <br/>
+                            Future works :-
+                            <br/>
+                            Perform Fabrication of the Robot (Initial task)
+                            <br/>
+                            Optimize the timing and trajectory of the gait pattern for maximizing stability and minimizing the energy usage Using the torque calculated using MATLAB a joint torque controller of ROS needs to be implemented Control the leg pattern using RNN
+                            <br/>
+                            ADAMS model for the entire robot including the trunk`
     }
   ];
 
