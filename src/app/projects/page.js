@@ -73,6 +73,9 @@ const MyComponent = () => {
                             AUVs are of great help for mapping underwater which is out of the reach of humans. 
                             This technical marvel is poised to play a pivotal role in shaping the future landscape of underwater robotics research and development.`
     },
+    {
+      name: ""
+    },
   ];
 
   return (
