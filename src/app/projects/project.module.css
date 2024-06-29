@@ -87,6 +87,7 @@
 }
 .details{
     display: flex;
+    gap: 2rem;
 }
 .line1{
     height: 1px;
@@ -94,13 +95,15 @@
     background-color: grey;
     margin-top: 10px;
     margin-bottom: 10px;
+    
 }
 
-.text1{
+/* .text1{
     padding-right: 80px;
     color: black;
+    padding: 20px;
 }
 .text2{
     padding-left: 50px;
     color: black;
-}
+} */
