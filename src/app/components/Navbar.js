@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className={styles.links}>
       <div className={styles.home}><Link href="/">home</Link></div>
       <div className={styles.about}><Link href="/About">about</Link></div>
-      <div className={styles.projects}><Link href="/Projects">projects</Link></div>
+      <div className={styles.projects}><Link href="/projects">projects</Link></div>
       <div className={styles.achievements}><Link href="/Achievements">achievements</Link></div>
       <div className={styles.events}><Link href="/Events">events</Link></div>
       <div className={styles.team}><Link href="/team">team</Link></div>
