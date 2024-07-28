@@ -1,0 +1,49 @@
+.page-container {
+    padding: 20px;
+    background-color: white;
+  }
+  
+ 
+  
+  .add-projects-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2D2B47;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .add-projects-button:hover {
+    background-color: #2B4257;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .content-item {
+    flex: 1 1 calc(50% - 20px);
+    border: 1px solid #BEC9F4;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #F9FAFB;
+    color: #2B4257;
+  }
+  
+  .content-item img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+  
+  .content-item p {
+    margin: 0;
+    font-size: 16px;
+  }
+  

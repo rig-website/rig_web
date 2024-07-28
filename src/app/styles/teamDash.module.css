@@ -21,7 +21,7 @@
     width: 400px;
     background-color: aqua;
     display: flex;
-    /* justify-content: space-between; */
+    
 }
 
 .photoItem1{
@@ -35,7 +35,6 @@
 
  .linksItem1{
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-around;
  }
 
