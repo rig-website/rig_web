@@ -11,7 +11,7 @@ const teamMembers = [
     name: "Chandrabhushan Kumar",
     position: "Designer",
     mobileNo: "+91 9876543210",
-    photo: "../CB.png",
+    photo: "../card4.jpg",
     socialLinks: {
       linkedin: "#",
       instagram: "#",
@@ -23,7 +23,7 @@ const teamMembers = [
     name: "Chandrabhushan Kumar",
     position: "Designer",
     mobileNo: "+91 9876543210",
-    photo: "../CB.png",
+    photo: "../card3.jpg",
     socialLinks: {
       linkedin: "#",
       instagram: "#",
@@ -31,150 +31,8 @@ const teamMembers = [
       email: "#"
     }
   },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },{
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Chandrabhushan Kumar",
-    position: "Designer",
-    mobileNo: "+91 9876543210",
-    photo: "../CB.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  // Add more team members here
-  {
-    name: "Member 2",
-    position: "Developer",
-    mobileNo: "+91 1234567890",
-    photo: "../member2.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  },
-  {
-    name: "Member 3",
-    position: "Manager",
-    mobileNo: "+91 9876543210",
-    photo: "../member3.png",
-    socialLinks: {
-      linkedin: "#",
-      instagram: "#",
-      twitter: "#",
-      email: "#"
-    }
-  }
+
+  
 ];
 
 const Page = () => {
@@ -193,7 +51,7 @@ const Page = () => {
             </div>
             <i><b className={styles.b}>"Driven by Innovation, Fueled by Passion. Explore the Boundless Horizons of Robotics."</b></i>
           </div>
-          <div className={styles.headerRight}>Past Members</div>
+          <div className={styles.headerRight }>Past Members</div>
         </div>
         
         <div className={styles.members}>

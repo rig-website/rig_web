@@ -13,21 +13,14 @@ const Navbar = () => {
     <div className={styles.links}>
       <div className={styles.home}><Link href="/">home</Link></div>
       <div className={styles.about}><Link href="/About">about</Link></div>
-      <div className={styles.projects}><Link href="/Projects">projects</Link></div>
-      <div className={styles.achievements}><Link href="/Achievements">achievements</Link></div>
-      <div className={styles.events}><Link href="/Events">events</Link></div>
-      <div className={styles.team}><Link href="/Team">team</Link></div>
-      <div className={styles.contacts}><Link href="/Contact">contacts</Link></div>
-      <button className={styles.login}>
-        <div className={styles.text}>login</div>
-      </button>
+      <div className={styles.projects}><Link href="/projects">projects</Link></div>
+      <div className={styles.achievements}><Link href="/achievements">achievements</Link></div>
+      <div className={styles.events}><Link href="/events">events</Link></div>
+      <div className={styles.team}><Link href="/team">team</Link></div>
+      <div className={styles.contacts}><Link href="/contact">contacts</Link></div>
+
     </div>
-    <div className={styles.rig}>rig</div>
-    <div className={styles.toggle}>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <div className={styles.rig}><Link href="/">RIG</Link></div>
     
   </div>
   <div className={styles.box}></div>

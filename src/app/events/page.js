@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../Events/event.module.css";
+import styles from "../events/event.module.css";
 import Navbar from "../components/Navbar";
 
 const page = () => {

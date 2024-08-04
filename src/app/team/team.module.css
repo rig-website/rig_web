@@ -41,16 +41,15 @@
     display: flex;
     align-items: center;
 }
-.headerLeft {
+.headerLeft  , .headerRight{
+    cursor: pointer;
     font-weight: bolder;
 }
-.headerRight {
-    font-weight: bolder;
-}
+
 .members{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 40px;
+    gap: 40px;  
 }
 .member{
     display: flex;
@@ -67,6 +66,7 @@
 }
 .icons{
     display: flex;
+    margin: 10px;
     justify-content: space-between;
 }
 .photo{

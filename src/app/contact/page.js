@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import styles from './contact.module.css';
+import styles from '../contact/contact.module.css';
 import Navbar from '../components/Navbar';
 
 const Contact = () => {

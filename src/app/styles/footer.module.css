@@ -15,12 +15,9 @@
     height: 100%;
     display: flex;
     /* background-color: aqua; */
-    flex: 1.1;
+    /* flex: 1.1; */
     flex-direction: column;
 }
-
-
-
 
 .up{
     height: 50%;
@@ -29,38 +26,28 @@
     /* background-color: aqua; */
 }
 
-.child1{
+.child1 ,.child2{
     display: flex;
     width: 50%;
     font-size: 15px;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     margin-left:15px ;
 }
-.child2{
-    display: flex;
-    width: 50%;
-    font-size: 15px;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-right: 15px;
-}
-.icons{
-    display: flex;
-    align-items: center;
-}
+
 .icon{
     width: 40px;
     margin: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .down{
-    height: 50%;
+    /* height: 70%; */
     display: flex;
-    justify-content: end;
+    justify-content: center;
     flex-direction: column;
-    flex-grow: 1;
-    /* background-color: rgb(255, 255, 255); */
     margin: 20px;
     font-size: 15px;
     font-weight: bold;
@@ -75,6 +62,7 @@
     flex: 1;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .boxcont{
     height: 100%;
@@ -87,20 +75,22 @@
 .navigate{
     color: #8aaccc;
 }
-
+.list{
+    cursor: pointer;
+}
 .login{
     height: 100%;
     display: flex;
     /* background-color: aqua; */
     flex: 1.1;
-    padding-top: 20px;
+    
     flex-direction: column;
     align-items: center;
 }
+
 .logincont{
     height: 100%;
     display: flex;
-    /* background-color: aqua; */
     flex: 1;
     flex-direction: column;
     justify-content: space-around;
@@ -114,24 +104,10 @@
     
 }
 
-
-.email{
-    height: 32px;
-    width: 280px;
-    border-radius: 2px;
-    background-color: white;
-    color: black;
-}
-.pass{
-    height: 32px;
-    width: 280px;
-    border-radius: 4px;
-    background-color: white;
-    color: black;
-}
 .btn{
     height: 30px;
     width: 80px;
+    cursor: pointer;
     margin: auto;
     background-color: blue;
     color: white;

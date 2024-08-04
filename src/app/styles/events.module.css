@@ -46,7 +46,7 @@
 .swiper-button-next::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 12px;
@@ -68,4 +68,6 @@
 .swiper-button-next:hover::before {
   width: 15px;
   height: 15px;
+  padding: auto;
+  overflow: hidden;
 }

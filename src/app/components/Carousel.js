@@ -26,7 +26,7 @@ const Carousel = () => {
         <Swiper
           onSwiper={setSwiperRef}
           slidesPerView={3}
-          centeredSlides={true}
+          centeredSlides={false}
           spaceBetween={30}
           pagination={{ type: 'fraction' }}
           navigation={true}
@@ -36,14 +36,13 @@ const Carousel = () => {
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div className={styles.card}>
-                <div className={styles.cardcontent}>
                   <div className={styles.image}>
                     <img src={slide.image} alt={slide.name} />
                   </div>
                   <div className={styles.nameproject}>
                     <span className={styles.name}>{slide.name}</span>
                   </div>
-                </div>
+           
               </div>
             </SwiperSlide>
           ))}

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../Achievements/achieve.module.css";
+import styles from "../achievements/achieve.module.css";
 import Navbar from "../components/Navbar";
 
 export default function AchievementReport() {
