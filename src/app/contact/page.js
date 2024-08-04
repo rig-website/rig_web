@@ -25,13 +25,14 @@ const Contact = () => {
   };
 
   return (
-    <div className={styles.root}>
-      <Navbar />
+    <div >
+<Navbar/>
       <div className={styles.container}>
         <div className={styles.header}>
           <h1>Contact Us</h1>
           <p>We'd love to hear from you! Please fill out the form below and we'll get in touch with you shortly.</p>
         </div>
+        <div className={styles.downmain}>
         <div className={styles.contactInfo}>
           <h2>Contact Information</h2>
           <div className={styles.infoItem}>
@@ -45,9 +46,10 @@ const Contact = () => {
           <div className={styles.infoItem}>
             <h3>Address</h3>
             <p>123 Robotics Ave, Tech City, TC 12345</p>
-          </div>
+            <br />
           <p>Thank you for reaching out to us. We appreciate your feedback and will respond as soon as possible.</p>
-        </div>
+          </div>
+        {/* </div> */}
         <div className={styles.details}>
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
@@ -87,9 +89,11 @@ const Contact = () => {
             </div>
             <button type="submit" className={styles.button}>Submit</button>
           </form>
-          <img src='../contact.jpeg'className={styles.image}></img>
         </div>
+        </div>
+        <div className={styles.bg}></div>
       </div>
+    </div>
     </div>
   );
 };

@@ -5,11 +5,8 @@ import Navbar from "../components/Navbar";
 export default function AchievementReport() {
   return (
     <div className={styles.container}>
-      {/* <Head>
-        <title>RIG Annual Achievement Report</title>
-        <meta name="description" content="Annual Achievement Report for the Robotics Interest Group (RIG)" />
-      </Head> */}
-      <Navbar/>
+      
+<Navbar/>
       <div className={styles.header}>
         <p className={styles.headerTitle}>Achievements</p>
         <div><img src='../Robo.png' className={styles.image}></img></div>
