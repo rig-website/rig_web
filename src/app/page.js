@@ -11,6 +11,7 @@ const page = () => {
     <>
       <Navbar/>
       <Landing/>
+
       <Carousel/>
       <Content/>
       {/* <TeamDash/> */}

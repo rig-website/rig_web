@@ -5,7 +5,7 @@ export const Content = () => {
   return (
     <>
         <div className={styles.wrapper}>
-            <div className={styles.head}>our mission</div>
+            <div className={styles.head}>OUR MISSION</div>
             <div className={styles.body}>
                 <div className={styles.right}>
                     Robotics Interest Group(RIG) was formed out of the passion for robotics, to facilitate learning and research in the areas of Mechatronics/robotics and Intelligent Systems, Automation , Advanced Control Systems, Modeling and Simulation, and Sensors & Algorithms.
@@ -14,7 +14,6 @@ export const Content = () => {
                        We also make sure that the knowledge acquired is shared with students, by conducting workshops, exhibitions and talks;
                      thereby introducing them to this the stream and invoking an interest among them for the same.
                 </div>
-                <div className={styles.left}></div>
             </div>
         </div>
 

@@ -10,6 +10,7 @@ const Navbar = () => {
             <Image src="/nitc-logo-white-02.svg" width={280} height={150} />
         </Link>
     </div>
+
     <div className={styles.links}>
       <div className={styles.home}><Link href="/">home</Link></div>
       <div className={styles.about}><Link href="/About">about</Link></div>

@@ -6,18 +6,19 @@
   height: 5rem;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 2rem;
     background-color: #E9EDFB;
     overflow: hidden;
-   
+   z-index: 100;
 
   }
   .logo{
-    width: 35vw;
+    width: auto;
   }
   
+ 
   
   
   .links {
@@ -33,7 +34,14 @@
     font-family: Source Sans 3,"Istok web",sans;
     font-weight :400;
     color: #2B4257;
-    
+    @media (max-width:1250px) {
+      gap:1.5rem;
+      padding-left: 100px;
+      
+    }
+     @media (max-width:900px){
+      gap: 1rem;
+     }
   }
   
   .rig{
@@ -46,7 +54,7 @@
     text-align: center;
     padding: 1rem 5rem;
     color: #000;
-    
+      
   }
   .login{
     background-color: #2D2B47;

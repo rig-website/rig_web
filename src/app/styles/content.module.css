@@ -1,35 +1,33 @@
 .wrapper{
     width: 100%;
-    /* min-height: 100vh; */
     background-color: rgb(0, 0, 0);
     align-items: center;
     display: flex;
     flex-direction: column;
     color: black;
+    background-color: white;
 }
 .head{
-    background-color: white;
-    width: 100vw;
-    height: 5vw;
-    color: black;
+    margin-top: 15px;   
     font-size: 30px;
-    font-weight: bolder;
-    text-transform: uppercase;
-    text-align: center;
-    align-content: center;
+  font-weight: bolder;
 }
 .body{
-    background-color: white;
+    
     display: flex;
     width: 100%;
-    /* min-height: 100vh; */
     padding: 1%;
     justify-content: flex-end;
 }
+
 .right{
     width: 47vw;
     margin-right: 2%;
+    text-align: start;
     font-weight: 400;
     font-size: 20px;
-    
+    @media(max-width:1200px){
+        width: 95vw;
+        text-align: center;
+    }
 }

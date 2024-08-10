@@ -26,9 +26,9 @@ const Carousel = () => {
         <Swiper
           onSwiper={setSwiperRef}
           slidesPerView={3}
-          centeredSlides={false}
-          spaceBetween={30}
-          pagination={{ type: 'fraction' }}
+          centeredSlides={true}
+          spaceBetween={20 }
+          pagination={{ type: 'bullets' }}
           navigation={true}
           modules={[Pagination, Navigation]}
           className={styles.mySwiper}
