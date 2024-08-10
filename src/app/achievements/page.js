@@ -15,16 +15,23 @@ export default function AchievementReport() {
         <h1 className={styles.title}>ROBOTICS INTEREST GROUP (RIG) Annual Achievement Report</h1>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>IInvenTiv mega R&D fair</h2>
+          <h2 className={styles.sectionTitle}>Origin Workshop</h2>
           <p className={styles.sectionContent}>
-            IITs, NITs, IISERs, IIITs, and other top 50 ranked NIRF Institutions in the country are coming together to showcase the R&D happening there. Two projects were selected from NIT, out of which one was from RIG. This project was presented in front of the Hon'ble education minister of India.
+            Conducted a two-day hands-on workshop introducing robotics for B23 students of NIT Calicut.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Robocon’23</h2>
+          <h2 className={styles.sectionTitle}>Robocon’23</h2> 
           <p className={styles.sectionContent}>
             Took part in Robocon’23, an international robotics competition, and secured among the top position defeating all other NITs or IITs.
+          </p>
+        </section>
+
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>IInvenTiv mega R&D fair</h2>
+          <p className={styles.sectionContent}>
+            IITs, NITs, IISERs, IIITs, and other top 50 ranked NIRF Institutions in the country are coming together to showcase the R&D happening there. Two projects were selected from NIT, out of which one was from RIG. This project was presented in front of the Hon'ble education minister of India.
           </p>
         </section>
 
@@ -53,13 +60,6 @@ export default function AchievementReport() {
           <h2 className={styles.sectionTitle}>Patent granted</h2>
           <p className={styles.sectionContent}>
             A patent was awarded for one of RIG's significant projects, the Hospital Bed, specifically designed to assist physically challenged patients.
-          </p>
-        </section>
-
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Origin Workshop</h2>
-          <p className={styles.sectionContent}>
-            Conducted a two-day hands-on workshop introducing robotics for B23 students of NIT Calicut.
           </p>
         </section>
 

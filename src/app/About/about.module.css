@@ -1,6 +1,7 @@
 .root {
     background-color: white;
     color: black;
+    overflow: hidden;
 }
 
 .backbox {
@@ -51,12 +52,20 @@
 
 .container {
     display: flex;
+    flex-direction: row;
     color: white;
     gap: 3rem;
+    @media(max-width: 1000px){
+        flex-direction: column-reverse;
+    }
 }
 
 .image {
     width: 35rem;
+    @media(max-width:1000px){
+        width: 90vw;
+        height: 50vw;
+    }
 }
 
 .line1 {
@@ -85,8 +94,18 @@
 }
 .question{
     font-size: 2.5rem;
+    @media(max-width:300px){
+        font-size: 1.5rem;
+    } 
+
 }
 
 .answer{
     font-size: 4rem;
+    @media(max-width:400px){
+        font-size: 3rem;
+    }
+    @media(max-width:300px){
+        font-size: 2rem;
+    }
 }

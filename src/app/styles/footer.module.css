@@ -87,9 +87,14 @@ justify-content: start;
     @media(max-width:1100px){
         grid-template-columns: 1fr;
         justify-content: start;
+        height: 90%;
+    }
+    @media(max-width:1000px){
+        height: 85%;
     }
     @media(max-width:900px){
        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+       /* height: 100%; */
     }
     @media(max-width:600px){
         grid-template-columns: 1fr  1fr 1fr 1fr;
@@ -128,17 +133,25 @@ justify-content: start;
 .rigid{
     height: 32px;
     width: 280px;
-    border-radius: 2px;
     background-color: white;
     color: black;
     @media(max-width:900px){
         width: 50vw;
 }
+
 }
 .rigid:focus{
    background-color: rgb(194, 233, 233);
 }
-
+.passwordWrapper{
+    display: flex;
+width: 90%;
+}
+.toggleBtn{
+    background-color: white;
+color: black;
+border-radius: 5px;
+}
 .btn{
     height: 40px    ;
     width: 80px;
@@ -152,4 +165,8 @@ justify-content: start;
 }
 .btn:hover{
     background-color: rgb(7, 20, 211);
+}
+.allow{
+    color:red;
+    font-size: large;
 }
