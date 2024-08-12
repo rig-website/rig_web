@@ -2,6 +2,7 @@
 
 .landing{
     display: flex;
+    z-index: -1;
     flex-direction: row;
 }
 .hero{
