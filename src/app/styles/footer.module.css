@@ -7,9 +7,9 @@
 .contact{
     color: rgb(255, 255, 255);
     width: 100%;
-    height: 30vh;
+    height:40vh;
     @media(max-width:900px){
-        height: 50vh;
+        height: 80vh;
     }
     overflow: hidden;
     background-color: #242754;

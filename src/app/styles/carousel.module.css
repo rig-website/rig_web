@@ -1,5 +1,4 @@
-/* styles/carousel.module.css */
-.title{
+.title {
     padding-top: 30px;
     width: 100%;
     color: black;
@@ -10,11 +9,9 @@
     font-weight: bold;
 }
 
-
 .body {
-    background-color:aliceblue;
+    background-color: aliceblue;
     width: 100%;
-    /* min-height: 100vh; */
     text-align: center;
     color: #000;
     display: flex;
@@ -36,22 +33,18 @@
 }
 
 .card {
-    background-color:aliceblue;
+    background-color: aliceblue;
     border-radius: 10px;
     overflow: hidden;
     width: 300px;
-    /* margin-left: 30px; */
 }
 
-/* .cardcontent {
-    padding: 20px;
-} */
-
+/* Adjust the image styling to be responsive */
 .image img {
     width: 100%;
+  
     height: auto;
     border-radius: 15px;
-    
 }
 
 .nameproject {
@@ -62,20 +55,66 @@
     font-size: 25px;
     font-weight: bolder;
     color: #000;
-
-}
-
-.swiper-container {
-    width: 100%;
-}
-
-.swiper-slide {
-    display: flex;
-    /* justify-content: space-between; */
-    /* align-items: center; */
 }
 
 .mySwiper {
     padding: 20px 0;
 }
 
+/* Responsive styles */
+
+/* For large screens (laptops/desktops) */
+@media (min-width: 1024px) {
+    .container {
+        width: 80%;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .mySwiper {
+        padding: 40px 0;
+    }
+}
+
+/* For tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        width: 90%;
+    }
+
+    .card {
+        width: 250px;
+    }
+
+    .mySwiper {
+        padding: 30px 0;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+        /* height: 10vw; */
+    }
+
+    .card {
+        width:200px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .mySwiper {
+        padding: 20px 0;
+    }
+    
+    /* Adjust the number of slides visible */
+    .swiper-slide {
+        flex-shrink: 0;
+        width: calc(100% - 20px);
+    }
+}

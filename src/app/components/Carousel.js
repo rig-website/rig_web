@@ -18,37 +18,47 @@ const Carousel = () => {
   ];
 
   return (
-    
     <>
-    <div className={styles.title}><div>OUR PROJECTS</div></div>
-    <div className={styles.body}>
-      <div className={styles.container}>
-        <Swiper
-          onSwiper={setSwiperRef}
-          slidesPerView={3}
-          centeredSlides={true}
-          spaceBetween={20 }
-          pagination={{ type: 'bullets' }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className={styles.mySwiper}
-        >
-          {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div className={styles.card}>
+      <div className={styles.title}><div>OUR PROJECTS</div></div>
+      <div className={styles.body}>
+        <div className={styles.container}>
+          <Swiper
+            onSwiper={setSwiperRef}
+            breakpoints={{
+              320: {   // Mobile
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              640: {   // Small screens
+                slidesPerView: 2,
+                spaceBetween: 15,
+              },
+              1170: {  // Tablets and larger
+                slidesPerView: 3,
+                spaceBetween: 20,
+              }
+            }}
+            centeredSlides={true}
+            pagination={{ type: 'bullets' }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className={styles.mySwiper}
+          >
+            {slides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <div className={styles.card}>
                   <div className={styles.image}>
                     <img src={slide.image} alt={slide.name} />
                   </div>
                   <div className={styles.nameproject}>
                     <span className={styles.name}>{slide.name}</span>
                   </div>
-           
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
-    </div>
     </>
   );
 };
