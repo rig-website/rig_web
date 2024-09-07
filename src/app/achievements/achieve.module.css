@@ -1,6 +1,7 @@
 /* styles/AchievementReport.module.css */
 .container {
     background: #ffffff;
+    text-align: justify;
   }
   /* styles/AchievementReport.module.css */
 .header {
@@ -65,12 +66,10 @@
     @media(max-width:900px){
 font-size: 4vw;
     }
-    @media(max-width:650px){
-font-size: 1.5rem;
+    @media(max-width:600px){
+font-size: 18px;
     }
-    @media(max-width:450px){
-
-  }
+   
 }
   .title::after {
     content: '';
@@ -92,6 +91,9 @@ font-size: 1.5rem;
     color: #ad00b3;
     margin-bottom: 0.5rem;
     position: relative;
+    @media(max-width:600px){
+      font-size: 15px;
+          }
   }
   
   .sectionTitle::before {
@@ -105,10 +107,13 @@ font-size: 1.5rem;
   }
   
   .sectionContent {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     color: #666;
     margin-left: 1rem;
+    @media(max-width:600px){
+      font-size: 12px;
+          }
   }
   
   .section:hover {

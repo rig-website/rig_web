@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import styles from "@/app/styles/carousel.module.css";
-
+import Image from 'next/image';
 const Carousel = () => {
   const [swiperRef, setSwiperRef] = useState(null);
 
@@ -48,7 +48,7 @@ const Carousel = () => {
               <SwiperSlide key={slide.id}>
                 <div className={styles.card}>
                   <div className={styles.image}>
-                    <img src={slide.image} alt={slide.name} />
+                    <Image src={slide.image} alt={slide.name} width={500} height={200}/>
                   </div>
                   <div className={styles.nameproject}>
                     <span className={styles.name}>{slide.name}</span>

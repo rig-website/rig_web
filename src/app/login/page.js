@@ -2,7 +2,7 @@
 
 export const page = () => {
   return (
-    <div>page</div>
+    <div>login page</div>
   )
 }
 export default page

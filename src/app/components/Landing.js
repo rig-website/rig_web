@@ -10,7 +10,7 @@ export const Landing = () => {
   
     <div className={styles.hero}>
         <div className={styles.img}>
-        <Image src="/landing.jpg" layout='fill'  alt='picture of robot' style={{objectFit: "fill"}}/>
+        <Image src="/landing.jpg" layout='fill' alt='picture of robot' style={{ objectFit: "cover" }} />
         </div>
     </div>
       <div className={styles.right}>

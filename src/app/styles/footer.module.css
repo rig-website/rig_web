@@ -45,6 +45,9 @@ align-items: center;
     @media(max-width:900px){
         flex-direction: row;
       }
+      @media(max-width:550px){
+        font-size: 10px;
+    }
 }
 
 .icon{
@@ -64,6 +67,9 @@ justify-content: start;
     margin: 20px;
     font-size: 15px;
     font-weight: bold;
+    @media(max-width:550px){
+        font-size: 11px;
+    }
 }
 .address{
     color: #8aaccc;
@@ -98,6 +104,7 @@ justify-content: start;
     }
     @media(max-width:600px){
         grid-template-columns: 1fr  1fr 1fr 1fr;
+        font-size: 15px ;
      }
 }
 .navigate{
@@ -165,10 +172,13 @@ width: 90%;
 .btn:hover{
     background-color: rgb(7, 20, 211);
 }
-.allow{
-    color:red;
-    font-size: large;
+.navigate{
+
+ @media(max-width:600px ) {
+    font-size: 10px;
+ }
 }
 .body{
     margin: 0px;padding: 0;
+  
 }

@@ -4,14 +4,19 @@
     display: flex;
     z-index: -1;
     flex-direction: row;
+    /* height: 100vw; */
 }
 .hero{
     height: 40vw;
     width:100%;
     display: flex;
     justify-content: center;
-    
-
+    @media(max-width:600px){
+        height: 60vw;
+    }
+    @media(max-width:400px){
+        height: 70vw;
+    }
 }
 .img{
   
@@ -44,4 +49,7 @@
     text-transform: capitalize;
     font-weight: 500;
     font-style: italic;
+     @media(max-width:600px ) {
+        font-size: 10px;
+     }
 }

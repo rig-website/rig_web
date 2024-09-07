@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from "@/app/styles/footer.module.css";
 import Link from "next/link";
-
+import Image from 'next/image';
 const Contact = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -27,7 +27,7 @@ const Contact = () => {
         <div className={styles.login}>
           <div className={styles.logincont}>
             <span className={styles.navigate}>Enter to RIG console</span>
-            <div className={styles.allow}><i>*only rig members are allowed</i></div>
+            <div className={styles.navigate}><i>*only rig members are allowed</i></div>
             <div><input type='text' className={styles.rigid} placeholder='RIG ID' autoFocus={true}></input></div>
             <div className={styles.passwordWrapper}>
               <input 
@@ -49,12 +49,12 @@ const Contact = () => {
         <div className={styles.box1}>
           <div className={styles.up}>
             <div className={styles.child1}>
-              <div><a href='#' className={styles.icon}><img src='../icon-insta.svg' alt='Instagram'></img></a></div>
-              <div><a href='#' className={styles.icon}><img src='../icon-x.svg' alt='X'></img></a></div>
+              <div><a href='#' className={styles.icon}><Image width={35} height={35}  src='../icon-insta.svg' alt='Instagram'></Image></a></div>
+              <div><a href='#' className={styles.icon}><Image width={35} height={35} src='../icon-x.svg' alt='X'></Image></a></div>
             </div>
             <div className={styles.child2}>
-              <div><a href='#' className={styles.icon}><img src='../icon-linked-in.svg' alt='LinkedIn'></img></a></div>
-              <div><a href='#' className={styles.icon}><img src='../icon-mail.svg' alt='Mail'></img></a></div>
+              <div><a href='#' className={styles.icon}><Image width={35} height={35}  src='../icon-linked-in.svg' alt='LinkedIn'></Image></a></div>
+              <div><a href='#' className={styles.icon}><Image width={35} height={35}  src='../icon-mail.svg' alt='Mail'></Image></a></div>
             </div>
           </div>
           <div className={styles.down}>
