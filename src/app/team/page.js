@@ -6,6 +6,28 @@ import Navbar from '../components/Navbar';
 import styles from '@/app/team/team.module.css';
 
 const teamMembers = [
+
+  {
+    name: "Shibin Fazil",
+    linkedin: "https://www.linkedin.com/in/shibin-fazil/",
+    presentation: "https://drive.google.com/uc?export=view&id=11WCYgS-fWlJtluoJtZz6AwTl0CZZ7Rhx",
+    year: "2021-2025",
+    position: "Team Member"
+  },
+  {
+    name: "Karthik Jayaraj",
+    linkedin: "https://www.linkedin.com/in/karthik-jayaraj-93a903222/",
+    presentation: "https://drive.google.com/uc?export=view&id=1dr4W01gyS4llPOgJjkRI2l647jUN1IEP",
+    year: "2021-2025",
+    position: "Team Member"
+  },
+  {
+    name: "Nikita S",
+    linkedin: "https://www.linkedin.com/in/nikitha-saji/",
+    presentation: "https://drive.google.com/uc?export=view&id=1qjwhbprZWhIr40Cj7qCc2fu5wlUTyE-W",
+    year: "2021-2025",
+    position: "Team Member"
+  },
   {
     name: "Karthik Manoranjan",
     linkedin: "https://www.linkedin.com/in/karthik-manoranjan",
@@ -34,31 +56,11 @@ const teamMembers = [
     year: "2021-2025",
     position: "Team Member"
   },
+   
   {
     name: "Adhyuth Narayan",
     linkedin: "https://www.linkedin.com/in/adhyuth-narayan",
     presentation: "https://drive.google.com/uc?export=view&id=1JbAkmFDPiO79KE_hevZRw_9VlaEZittM",
-    year: "2021-2025",
-    position: "Team Member"
-  },
-  {
-    name: "Shibin Fazil",
-    linkedin: "https://www.linkedin.com/in/shibin-fazil/",
-    presentation: "https://drive.google.com/uc?export=view&id=11WCYgS-fWlJtluoJtZz6AwTl0CZZ7Rhx",
-    year: "2021-2025",
-    position: "Team Member"
-  },
-  {
-    name: "Karthik Jayaraj",
-    linkedin: "https://www.linkedin.com/in/karthik-jayaraj-93a903222/",
-    presentation: "https://drive.google.com/uc?export=view&id=1dr4W01gyS4llPOgJjkRI2l647jUN1IEP",
-    year: "2021-2025",
-    position: "Team Member"
-  },
-  {
-    name: "Nikita S",
-    linkedin: "https://www.linkedin.com/in/nikitha-saji/",
-    presentation: "https://drive.google.com/uc?export=view&id=1qjwhbprZWhIr40Cj7qCc2fu5wlUTyE-W",
     year: "2021-2025",
     position: "Team Member"
   },
@@ -78,7 +80,7 @@ const teamMembers = [
   },
   {
     name: "Krishnaprasad",
-    linkedin: "#",
+    linkedin: "/",
     presentation: "",
     year: "2021-2025",
     position: "Team Member"
@@ -204,12 +206,14 @@ const Page = () => {
                   <div className={styles.inData}>
                     <p className={styles.name}>{member.name}</p>
                     <p className={styles.position}>{member.position}</p>
+                    <div className={styles.icons}>
                     <p className={styles.year}>{member.year}</p>
-                  </div>
-                  <div className={styles.icons}>
+                  <div >
                     {member.linkedin && <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedinIn className={styles.icon} /></a>}
                   </div>
+                  </div>
                 </div>
+                  </div>
               </div>
             ))}
           </div>

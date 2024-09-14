@@ -64,10 +64,13 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 120px;  
+    gap: 110px;  
+    @media(max-width:700px){
+        gap: 50px;
+    }
 }
 .member {
-    border: 1px groove black;
+    border: 0.5px solid rgb(139, 222, 239);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -78,6 +81,10 @@
     justify-content: center;
     flex-direction: column;
   }
+  .member:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+  }
   
 .inData{
     display: flex;
@@ -86,11 +93,22 @@
 }
 .name{
     font-weight: bolder;
+    @media(max-width: 700px) {
+        font-size: 15px;
+    }
+}
+.position{
+    @media(max-width: 700px) {
+        font-size: 15px;
+    }
 }
 .icons{
     display: flex;
     margin: 10px;
+    flex-direction: row-reverse;
     justify-content: space-between;
+    gap: 10px;
+    align-items: center;
 }
 .photo{
     width: 160px;
@@ -108,9 +126,15 @@
     align-items: center;
 }
 .photo {
-    width: 250px;
-    height: 200px; /* Maintain aspect ratio */
-  }.yearSelector {
+    width: 200px;
+    height: 150px; /* Maintain aspect ratio */
+@media(max-width:700px){
+    width: 180px;
+    height: 120px;
+}  
+}
+  
+  .yearSelector {
     margin: 20px 0;
     display: flex;
     align-items: center;

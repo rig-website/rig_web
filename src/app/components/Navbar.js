@@ -39,7 +39,11 @@ const Navbar = () => {
           <Link href="/contact" className={styles.link}>Contact</Link>
         </div>
         
-        <div className={styles.rig}><Link href="/">RIG</Link></div>
+        <div className={styles.rig}><Link href="/"> <div className={styles.logo}>
+          <Link href="/">
+            <Image src="/rig logo blue.png" width={95} height={75} alt="Logo" />
+          </Link>
+        </div></Link></div>
 
         <button className={styles.menuButton} onClick={toggleSidebar} aria-label="Open Menu">
           <svg xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 96 960 960" width="42">
