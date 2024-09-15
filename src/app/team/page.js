@@ -132,11 +132,12 @@ const teamMembers = [
   }
 ];
 
+
 const Page = () => {
   const [selectedYear, setSelectedYear] = useState('2021-2025'); // Default year
   const membersRef = useRef([]); // Create a reference to store all member divs
 
-  // Function to filter members by year
+  // Filter team members by selected year
   const filterTeamMembersByYear = (year) => {
     return teamMembers.filter(member => member.year === year);
   };
@@ -147,28 +148,35 @@ const Page = () => {
   const handleYearChange = (e) => {
     setSelectedYear(e.target.value);
   };
-  useEffect(() => {
-    gsap.fromTo(
-      membersRef.current,
-      {
-        opacity: 0,
-        scale: 1.5,
-        y: 100, // start 100px below
-        x: -100,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0, // move to original position
-        x: 0,
-        duration: 1,
-        stagger: 0.2, // Stagger the animation by 0.2 seconds for each member
-        ease: 'power3.out',
-     
-      }
-    );
-  }, [filteredTeamMembers]);
 
+  useEffect(() => {
+    const validMembers = membersRef.current.filter(member => member !== null); // Filter out null values
+    if (validMembers.length > 0) {
+      gsap.fromTo(
+        validMembers,
+        {
+          opacity: 0,
+          scale: 1.5,
+          y: 100, // start 100px below
+          x: -100,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0, // move to original position
+          x: 0,
+          duration: 1,
+          stagger: 0.2, // Stagger the animation by 0.2 seconds for each member
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: validMembers,
+            start: 'top 80%', // When top of the element reaches 80% of viewport height
+            toggleActions: 'play none none none',
+          }
+        }
+      );
+    }
+  }, [filteredTeamMembers]); // Re-run when the filtered members change
 
   return (
     <>
@@ -192,7 +200,7 @@ const Page = () => {
         </div>
 
         {/* Dropdown to select year */}
-        <div className={styles.yearSelector}>
+        <center className={styles.yearSelector}>
           <label htmlFor="year">Select Year: </label>
           <select id="year" value={selectedYear} onChange={handleYearChange}>
             <option value="2021-2025">2021-2025</option>
@@ -200,7 +208,7 @@ const Page = () => {
             <option value="2019-2023">2019-2023</option>
             <option value="Developer">Developers</option>
           </select>
-        </div>
+        </center>
 
         {/* Conditional rendering for team members */}
         {filteredTeamMembers.length === 0 ? (
