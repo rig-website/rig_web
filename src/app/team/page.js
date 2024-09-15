@@ -4,7 +4,10 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import styles from '@/app/team/team.module.css';
-
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 const teamMembers = [
 
   {
@@ -129,22 +132,43 @@ const teamMembers = [
   }
 ];
 
-
-
-// Function to filter members by year
-const filterTeamMembersByYear = (year) => {
-  return teamMembers.filter(member => member.year === year);
-};
-
 const Page = () => {
   const [selectedYear, setSelectedYear] = useState('2021-2025'); // Default year
+  const membersRef = useRef([]); // Create a reference to store all member divs
+
+  // Function to filter members by year
+  const filterTeamMembersByYear = (year) => {
+    return teamMembers.filter(member => member.year === year);
+  };
+
+  const filteredTeamMembers = filterTeamMembersByYear(selectedYear);
 
   // Handle year change
   const handleYearChange = (e) => {
     setSelectedYear(e.target.value);
   };
+  useEffect(() => {
+    gsap.fromTo(
+      membersRef.current,
+      {
+        opacity: 0,
+        scale: 1.5,
+        y: 100, // start 100px below
+        x: -100,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0, // move to original position
+        x: 0,
+        duration: 1,
+        stagger: 0.2, // Stagger the animation by 0.2 seconds for each member
+        ease: 'power3.out',
+     
+      }
+    );
+  }, [filteredTeamMembers]);
 
-  const filteredTeamMembers = filterTeamMembersByYear(selectedYear);
 
   return (
     <>
@@ -152,7 +176,6 @@ const Page = () => {
 
       <div className={styles.backbeam}>
         <div className={styles.heads}>
-          {/* <div className={styles.headerLeft}>Current Members</div> */}
           <div className={styles.headerCenter}>
             <div className={styles.teamH}>Our Team</div>
             <div className={styles.dots}>
@@ -166,7 +189,6 @@ const Page = () => {
               </b>
             </i>
           </div>
-          {/* <div className={styles.headerRight}>Past Members</div> */}
         </div>
 
         {/* Dropdown to select year */}
@@ -174,46 +196,51 @@ const Page = () => {
           <label htmlFor="year">Select Year: </label>
           <select id="year" value={selectedYear} onChange={handleYearChange}>
             <option value="2021-2025">2021-2025</option>
-            <option value="2020-2024">2017-2021</option>
-            <option value="2019-2023">2013-2017</option>
+            <option value="2020-2024">2020-2024</option>
+            <option value="2019-2023">2019-2023</option>
             <option value="Developer">Developers</option>
-            {/* Add more options as needed */}
           </select>
-      
         </div>
-          {/* Conditional rendering for team members */}
-          {filteredTeamMembers.length === 0 ? (
+
+        {/* Conditional rendering for team members */}
+        {filteredTeamMembers.length === 0 ? (
           <div className={styles.nomember}>No data is available</div>
         ) : (
           <div className={styles.members}>
             {filteredTeamMembers.map((member, index) => (
-              <div key={index} className={styles.member}>
+              <div 
+                key={index} 
+                className={styles.member}
+                ref={(el) => membersRef.current[index] = el}  // Attach the ref to each member
+              >
                 <div>
-                <Image
-  src={member.presentation || '/default.jpg'}
-  alt={member.name}
-  width={300}
-  height={250}
-  object-fit= "scale-down"
-  quality={100}  // Set image quality to 100
-  priority  // Ensures this image is prioritized during page load
-  className={styles.photo}
-/>
-
-
+                  <Image
+                    src={member.presentation || '/default.jpg'}
+                    alt={member.name}
+                    width={300}
+                    height={250}
+                    objectFit="scale-down"
+                    quality={100}
+                    priority
+                    className={styles.photo}
+                  />
                 </div>
                 <div className={styles.details}>
                   <div className={styles.inData}>
                     <p className={styles.name}>{member.name}</p>
                     <p className={styles.position}>{member.position}</p>
                     <div className={styles.icons}>
-                    <p className={styles.year}>{member.year}</p>
-                  <div >
-                    {member.linkedin && <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedinIn className={styles.icon} /></a>}
-                  </div>
+                      <p className={styles.year}>{member.year}</p>
+                      <div>
+                        {member.linkedin && (
+                          <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                            <FaLinkedinIn className={styles.icon} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                  </div>
               </div>
             ))}
           </div>

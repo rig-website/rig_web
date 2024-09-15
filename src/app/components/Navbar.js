@@ -1,11 +1,19 @@
-'use client'
-import Image from "next/image";
-import styles from "@/app/styles/navbar.module.css";
-import Link from "next/link";
-import { useState } from "react";
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import styles from '@/app/styles/navbar.module.css';
+import Link from 'next/link';
+import gsap from 'gsap';
 
 const Navbar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
+
+  // Refs for animations
+  const sidebarLinksRef = useRef([]);
+  const desktopLinksRef = useRef([]);
+  const logoRef = useRef(null); // Ref for main logo
+  const rigLogoRef = useRef(null); // Ref for rig logo
 
   const toggleSidebar = () => {
     setSidebarVisible(!isSidebarVisible);
@@ -15,21 +23,93 @@ const Navbar = () => {
     setSidebarVisible(false);
   };
 
+  // This useEffect runs only once, when the component is mounted (empty dependency array)
+  useEffect(() => {
+    // Animate the main logo
+    if (logoRef.current) {
+      gsap.fromTo(
+        logoRef.current,
+        { opacity: 0, scale: 0.5 ,y: '-50'},
+        {
+          opacity: 1,
+          scale: 1,
+          y: '0',
+          duration: 0.8,
+          ease: 'power2.out',
+        }
+      );
+    }
+
+    // Animate the rig logo
+    if (rigLogoRef.current) {
+      gsap.fromTo(
+        rigLogoRef.current,
+        { opacity: 0,scale:0,y: '-50'}, 
+        {
+          opacity: 1,
+          scale: 1,
+          y: '0',
+          duration: 0.8,
+          ease: 'power2.out',
+          delay: 0.2, // Slight delay to stagger the animation after the main logo
+        }
+      );
+    }
+
+    // Animation for desktop links
+    if (desktopLinksRef.current.length) {
+      gsap.fromTo(
+        desktopLinksRef.current,
+        { y: '-50', opacity: 0 },
+        {
+          y: '0',
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.3,
+          ease: 'power2.out',
+        }
+      );
+    }
+  }, []); // Empty dependency array ensures this effect only runs once when the component mounts
+
+  // This useEffect runs when the sidebar is toggled
+  useEffect(() => {
+    // Animation for sidebar links
+    if (sidebarLinksRef.current.length && isSidebarVisible) {
+      gsap.fromTo(
+        sidebarLinksRef.current,
+        { x: '100', opacity: 0 },
+        {
+          x: '0',
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.3,
+          ease: 'power2.out',
+        }
+      );
+    }
+  }, [isSidebarVisible]); // This only runs when `isSidebarVisible` changes
+
   return (
     <>
       <div className={styles.navbar}>
-        <div className={styles.logo}>
+        {/* Main logo */}
+        <div className={styles.logo} ref={logoRef}>
           <Link href="/">
             <Image src="/nitc-logo-white-02.svg" width={280} height={150} alt="Logo" />
           </Link>
         </div>
-        <div className={styles.logonew}>
+
+        {/* Alternate logo */}
+        <div className={styles.logonew} ref={rigLogoRef}>
           <Link href="/">
             <Image src="/image.png" width={110} height={60} alt="Logo" />
           </Link>
         </div>
 
-        <div className={styles.links}>
+        <div className={styles.links} ref={el => { 
+          if (el) desktopLinksRef.current = Array.from(el.querySelectorAll(`.${styles.link}`));
+        }}>
           <Link href="/" className={styles.link}>Home</Link>
           <Link href="/About" className={styles.link}>About</Link>
           <Link href="/projects" className={styles.link}>Projects</Link>
@@ -38,23 +118,40 @@ const Navbar = () => {
           <Link href="/team" className={styles.link}>Team</Link>
           <Link href="/contact" className={styles.link}>Contact</Link>
         </div>
-        
-        <div className={styles.rig}><Link href="/"> <div className={styles.logo}>
-          <Link href="/">
-            <Image src="/rig logo blue.png" width={95} height={75} alt="Logo" />
-          </Link>
-        </div></Link></div>
 
-        <button className={styles.menuButton} onClick={toggleSidebar} aria-label="Open Menu">
+        <div className={styles.rig}>
+          <Link href="/">
+            <div className={styles.logo} ref={rigLogoRef}>
+              <Link href="/">
+                <Image src="/rig logo blue.png" width={95} height={75} alt="Logo" />
+              </Link>
+            </div>
+          </Link>
+        </div>
+
+        <button
+          className={styles.menuButton}
+          onClick={toggleSidebar}
+          aria-label="Open Menu"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 96 960 960" width="42">
-            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
           </svg>
         </button>
 
-        <div className={`${styles.sidebar} ${isSidebarVisible ? styles.visible : styles.hidden}`}>
-          <button className={styles.closeButton} onClick={closeSidebar} aria-label="Close Menu">
+        <div
+          className={`${styles.sidebar} ${isSidebarVisible ? styles.visible : styles.hidden}`}
+          ref={el => { 
+            if (el) sidebarLinksRef.current = Array.from(el.querySelectorAll(`.${styles.sidebarLink}`));
+          }}
+        >
+          <button
+            className={styles.closeButton}
+            onClick={closeSidebar}
+            aria-label="Close Menu"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 96 960 960" width="42">
-              <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+              <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
             </svg>
           </button>
           <Link href="/" className={styles.sidebarLink}>Home</Link>
