@@ -4,7 +4,7 @@ import Carousel from "./components/Carousel"
 import Events from "./components/Events"
 import Content from "./components/Content"
 import Contact from "./components/Footer"
-import Team from "./components/TeamDash"
+
 
 const page = () => {
   return (
