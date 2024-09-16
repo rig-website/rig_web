@@ -100,7 +100,7 @@ const Contact = () => {
             <div className={styles.list} ref={el => linksRef.current[1] = el}><Link href="/About">About</Link></div>
             <div className={styles.list} ref={el => linksRef.current[2] = el}><Link href="/projects">Projects</Link></div>
             <div className={styles.list} ref={el => linksRef.current[3] = el}><Link href="/events">Events</Link></div>
-            <div className={styles.list} ref={el => linksRef.current[4] = el}><Link href="/Team">Team</Link></div>
+            <div className={styles.list} ref={el => linksRef.current[4] = el}><Link href="/team">Team</Link></div>
             <div className={styles.list} ref={el => linksRef.current[5] = el}><Link href="/contact">Contacts</Link></div>
             <div className={styles.list} ref={el => linksRef.current[6] = el}><Link href="/achievements">Achievements</Link></div>
           </div>

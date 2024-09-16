@@ -26,8 +26,8 @@ export default function AchievementReport() {
 
     // Image animation
     gsap.fromTo(imageRef.current, 
-      { opacity: 0, scale: 0.8 }, 
-      { opacity: 1, scale: 1, duration: 1, ease: 'power2.out', delay: 0.3 }
+      { opacity: 0, scale: 0.8,y:-500 ,x:500 }, 
+      { opacity: 1, scale: 1, duration: 1, ease: 'power2.out', delay: 0.3 ,y:0 ,x:0 }
     );
 
     // Sections animation on scroll
