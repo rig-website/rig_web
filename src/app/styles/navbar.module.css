@@ -23,8 +23,8 @@
   position: fixed;
   top: 0;
   right: 0px;
-  height: 30rem;
-  width: 35%;
+  height: 100%;
+  width: 50%;
   background-color: #b9bdf4;
   /* opacity:.7; */
   backdrop-filter: blur(12px);

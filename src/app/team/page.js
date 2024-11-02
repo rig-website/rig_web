@@ -112,7 +112,7 @@ const teamMembers = [
   {
     name: "Nirmal Fageria",
     linkedin: "https://www.linkedin.com/in/nirmal-fageria-11bab125a",
-    presentation: "https://drive.google.com/uc?export=view&id=1lkj_vymKyB0bRnXL49RIT3Izvs-czVXN",
+    presentation: "https://drive.google.com/uc?export=view&id=1WU-eJz315sUZFdje91Kfqf-HnxqRoOrR", 
     year: "Developer",
     // position: "Developer"
   },
@@ -226,8 +226,8 @@ const Page = () => {
                     src={member.presentation || '/default.jpg'}
                     alt={member.name}
                     width={300}
-                    height={250}
-                    objectFit="scale-down"
+                    height={200}
+                    objectFit="none"
                     quality={100}
                     priority
                     className={styles.photo}
