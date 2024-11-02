@@ -2,7 +2,7 @@
 
 .container {
   display: flex;
-  height: 88vh;
+  /* height: 88vh; */
   flex-direction: column;
     padding: 2rem;
     background-color: #fff;
@@ -83,19 +83,22 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    color: #f5f1f1;
+    color: #140101;
     background-color: rgb(88, 107, 107);
   }
   
   .input:focus,
   .textarea:focus {
-    border-color: #021d55;
+ border: 3px solid #e99b0c;
+ background-color: rgb(255, 251, 246);
+ color: rgb(10, 1, 1);
     outline:none;
-    box-shadow: 0 0 3rem #0128ec;
-  }
 
+  }
+  
   
   .button {
+    width: 20%;
     padding: 0.75rem;
     background-color: #0070f3;
     color: white;
