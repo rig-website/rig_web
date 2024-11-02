@@ -65,7 +65,7 @@ align-items: center;
 justify-content: start;
     }
     margin: 20px;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     @media(max-width:550px){
         font-size: 11px;
