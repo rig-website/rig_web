@@ -23,59 +23,10 @@ const Navbar = () => {
     setSidebarVisible(false);
   };
 
-  // This useEffect runs only once, when the component is mounted (empty dependency array)
   useEffect(() => {
-    // Animate the main logo
-    if (logoRef.current) {
-      gsap.fromTo(
-        logoRef.current,
-        { opacity: 0, scale: 0.5 ,y: '-50'},
-        {
-          opacity: 1,
-          scale: 1,
-          y: '0',
-          duration: 0.8,
-          ease: 'power2.out',
-        }
-      );
-    }
+    const isDesktop = window.innerWidth >= 1024;
 
-    // Animate the rig logo
-    if (rigLogoRef.current) {
-      gsap.fromTo(
-        rigLogoRef.current,
-        { opacity: 0,scale:0,y: '-50'}, 
-        {
-          opacity: 1,
-          scale: 1,
-          y: '0',
-          duration: 0.8,
-          ease: 'power2.out',
-          delay: 0.2, // Slight delay to stagger the animation after the main logo
-        }
-      );
-    }
-
-    // Animation for desktop links
-    if (desktopLinksRef.current.length) {
-      gsap.fromTo(
-        desktopLinksRef.current,
-        { y: '-50', opacity: 0 },
-        {
-          y: '0',
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.3,
-          ease: 'power2.out',
-        }
-      );
-    }
-  }, []); // Empty dependency array ensures this effect only runs once when the component mounts
-
-  // This useEffect runs when the sidebar is toggled
-  useEffect(() => {
-    // Animation for sidebar links
-    if (sidebarLinksRef.current.length && isSidebarVisible) {
+    if (!isDesktop && sidebarLinksRef.current.length && isSidebarVisible) {
       gsap.fromTo(
         sidebarLinksRef.current,
         { x: '100', opacity: 0 },
@@ -118,7 +69,6 @@ const Navbar = () => {
           <Link href="/team" className={styles.link}>Team</Link>
           <Link href="/contact" className={styles.link}>Contact</Link>
         </div>
-
         <div className={styles.rig}>
           <Link href="/">
             <div className={styles.logo} ref={rigLogoRef}>
@@ -128,7 +78,6 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-
         <button
           className={styles.menuButton}
           onClick={toggleSidebar}
@@ -163,7 +112,9 @@ const Navbar = () => {
           <Link href="/contact" className={styles.sidebarLink}>Contact</Link>
         </div>
       </div>
-      <div className={styles.box}></div>
+      <div className={styles.box}>
+
+      </div>
     </>
   );
 };

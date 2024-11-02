@@ -2,7 +2,7 @@
 
 .container {
   display: flex;
-  height: 88vh;
+  /* height: 88vh; */
   flex-direction: column;
     padding: 2rem;
     background-color: #fff;
@@ -98,6 +98,7 @@
   
   
   .button {
+    width: 20%;
     padding: 0.75rem;
     background-color: #0070f3;
     color: white;

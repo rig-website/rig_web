@@ -12,7 +12,7 @@ const page = () => {
       <Navbar/>
       <Landing/>
 
-      <Carousel/>
+      {/* <Carousel/> */}
       <Content/>
       {/* <TeamDash/> */}
       <Contact/>
