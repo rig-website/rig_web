@@ -154,9 +154,8 @@ const Page = () => {
         validMembers,
         {
           opacity: 0,
-          scale: 1.5,
-          y: 100,
-          x: -100,
+          scale:0.5,
+          
         },
         {
           opacity: 1,
@@ -166,11 +165,7 @@ const Page = () => {
           duration: 1,
           stagger: 0.2,
           ease: 'power3.out',
-          scrollTrigger: {
-            trigger: validMembers,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          }
+        
         }
       );
     }

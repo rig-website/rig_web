@@ -51,16 +51,7 @@ export default function AchievementReport() {
       <Navbar />
       <div className={styles.header} ref={headerRef}>
         <p className={styles.headerTitle}>Achievements</p>
-        <div ref={imageRef}>
-          <Image
-            src='/Robo.png'
-            width={400}
-            height={400}
-            className={styles.image}
-            style={{ objectFit: "contain" }}
-            alt="Robo Image" 
-          />
-        </div>
+   
       </div>
 
       <main className={styles.main}>
