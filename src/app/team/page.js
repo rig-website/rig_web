@@ -132,51 +132,53 @@ const teamMembers = [
   }
 ];
 
-
 const Page = () => {
-  const [selectedYear, setSelectedYear] = useState('2021-2025'); // Default year
-  const membersRef = useRef([]); // Create a reference to store all member divs
+  const [selectedYear, setSelectedYear] = useState('2021-2025');
+  const membersRef = useRef([]);
+  const [loading, setLoading] = useState({}); // Object to store loading state for each image
 
-  // Filter team members by selected year
   const filterTeamMembersByYear = (year) => {
     return teamMembers.filter(member => member.year === year);
   };
 
   const filteredTeamMembers = filterTeamMembersByYear(selectedYear);
 
-  // Handle year change
   const handleYearChange = (e) => {
     setSelectedYear(e.target.value);
   };
 
   useEffect(() => {
-    const validMembers = membersRef.current.filter(member => member !== null); // Filter out null values
+    const validMembers = membersRef.current.filter(member => member !== null);
     if (validMembers.length > 0) {
       gsap.fromTo(
         validMembers,
         {
           opacity: 0,
           scale: 1.5,
-          y: 100, // start 100px below
+          y: 100,
           x: -100,
         },
         {
           opacity: 1,
           scale: 1,
-          y: 0, // move to original position
+          y: 0,
           x: 0,
           duration: 1,
-          stagger: 0.2, // Stagger the animation by 0.2 seconds for each member
+          stagger: 0.2,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: validMembers,
-            start: 'top 80%', // When top of the element reaches 80% of viewport height
+            start: 'top 80%',
             toggleActions: 'play none none none',
           }
         }
       );
     }
-  }, [filteredTeamMembers]); // Re-run when the filtered members change
+  }, [filteredTeamMembers]);
+
+  const handleLoadingComplete = (name) => {
+    setLoading((prev) => ({ ...prev, [name]: false }));
+  };
 
   return (
     <>
@@ -199,7 +201,6 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Dropdown to select year */}
         <center className={styles.yearSelector}>
           <label htmlFor="year">Select Year: </label>
           <select id="year" value={selectedYear} onChange={handleYearChange}>
@@ -210,7 +211,6 @@ const Page = () => {
           </select>
         </center>
 
-        {/* Conditional rendering for team members */}
         {filteredTeamMembers.length === 0 ? (
           <div className={styles.nomember}>No data is available</div>
         ) : (
@@ -219,9 +219,13 @@ const Page = () => {
               <div 
                 key={index} 
                 className={styles.member}
-                ref={(el) => membersRef.current[index] = el}  // Attach the ref to each member
+                ref={(el) => membersRef.current[index] = el}
               >
                 <div>
+                  {/* Show loader while image is loading */}
+                  {loading[member.name] && (
+                    <div className={styles.loader}>Loading...</div>
+                  )}
                   <Image
                     src={member.presentation || '/default.jpg'}
                     alt={member.name}
@@ -231,6 +235,8 @@ const Page = () => {
                     quality={100}
                     priority
                     className={styles.photo}
+                    onLoadingComplete={() => handleLoadingComplete(member.name)}
+                    onLoad={() => setLoading((prev) => ({ ...prev, [member.name]: true }))}
                   />
                 </div>
                 <div className={styles.details}>
