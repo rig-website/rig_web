@@ -170,3 +170,7 @@
     text-align: justify;
 }
   
+.loder{
+    color: black;
+    z-index: 10;
+}

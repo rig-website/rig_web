@@ -150,24 +150,7 @@ const Page = () => {
   useEffect(() => {
     const validMembers = membersRef.current.filter(member => member !== null);
     if (validMembers.length > 0) {
-      gsap.fromTo(
-        validMembers,
-        {
-          opacity: 0,
-          scale:0.5,
-          
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          x: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: 'power3.out',
-        
-        }
-      );
+      
     }
   }, [filteredTeamMembers]);
 
@@ -226,7 +209,6 @@ const Page = () => {
                     alt={member.name}
                     width={300}
                     height={200}
-                    objectFit="none"
                     quality={100}
                     priority
                     className={styles.photo}
