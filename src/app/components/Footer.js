@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const Contact = () => {
+const Footer = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   // Refs for elements to animate
@@ -190,4 +190,4 @@ const Contact = () => {
   );
 }
 
-export default Contact;
+export default Footer;
