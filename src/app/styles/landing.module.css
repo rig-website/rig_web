@@ -1,55 +1,146 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;600&display=swap');
 
-.landing{
+.landing {
     display: flex;
-    z-index: -1;
     flex-direction: row;
-    /* height: 100vw; */
-}
-.hero{
-    height: 40vw;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    @media(max-width:600px){
-        height: 60vw;
-    }
-    @media(max-width:400px){
-        height: 70vw;
-    }
-}
-.img{
-  
-    z-index: -1;
+    min-height: 85vh; /* Ensure full viewport height */
+    overflow: hidden;
+    width: 100%; /* Full viewport width */
+   
 }
 
-.right{
+.hero {
+    position: relative; /* Make sure the child elements can be positioned absolutely */
     display: flex;
-    width:38vw;
-    @media(max-width:1100px){
-        width:70%;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Full viewport width */
+    
+    @media(max-width: 1000px) {
+        width: 100vw; /* Ensure full width on smaller screens */
     }
-    @media(max-width:650px){
-        width:100%;
+
+    @media(max-width: 600px) {
+        width: 100vw; /* Full width on mobile */
+        height: 50vh; /* Restrict height to avoid stretching */
     }
-    background-color: #242754;
-    opacity:0.7;
-    
-    
-    
+
+    @media(max-width: 400px) {
+        width: 100vw; /* Full width on mobile */
+        height: 50vh; 
+    }
 }
-.text{
-    padding-top:60px ;
-    padding-left: 40px;
+
+.img {
+    position: absolute; /* Ensure it covers the whole hero section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.right {
+    position: absolute; /* Overlay on top of the image */
+    top: 0;
+    right: 0; /* Position to the right edge */
+    background-color: rgba(36, 39, 84, 0.7); /* Semi-transparent background */
+    width: 30vw;
+    height: 100%;
+    padding: 20px;
+    z-index: 1; /* Ensure it appears above the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically by default */
+
+    @media(max-width: 1000px) {
+        width: 40vw;
+    }
+
+    @media(max-width: 600px) {
+        width: 100%; /* Full width on mobile */
+        height: 50vh; /* Auto height for smaller screens */
+        text-align: justify;
+        justify-content: space-between; /* Align items to start by default */
+        padding-top: 50px;
+    }
+    
+    @media(max-width: 400px) {
+        width: 100%; /* Full width on smaller devices */
+        height: 50vh; /* Maintain height proportional */
+        padding: 10px; /* Reduced padding on small screens */
+        padding-top: 50px;
+        justify-content: space-between   ; /* Align content to the bottom */
+    }
+}
+
+.text {
     color: #fff;
-    font-size: 26px;
-    width:28vw;
-    height:3vw;
-    font-family: "Roboto Serif",sans-serif;
-    text-transform: capitalize;
+    font-size: 2.5vw;
+    font-family: 'Roboto Serif', sans-serif;
     font-weight: 500;
     font-style: italic;
-     @media(max-width:600px ) {
-        font-size: 10px;
-     }
+    text-align: left;
+    width: 100%;
+    text-transform: capitalize;
+
+    @media(max-width: 900px) {
+        font-size: 18px;
+    }
+
+    @media(max-width: 600px) {
+        font-size: 15px; /* Larger text on smaller screens */
+    }
+
+    @media(max-width: 400px) {
+        font-size: 12px; /* Smaller font size for very small screens */
+    }
+}
+
+/* News ticker styles */
+.newsTicker {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    animation: scrollUp 20s linear infinite; /* Scroll news items */
+}
+
+.newsItem {
+    font-size: 20px;
+    font-family: 'Roboto Serif', sans-serif;
+    color: #fff;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 35px;
+
+    @media(max-width: 900px) {
+        font-size: 15px;
+    }
+
+    @media(max-width: 600px) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    @media(max-width: 400px) {
+        font-size: 12px; /* Responsive font size for smaller screens */
+        line-height: 20px; /* Adjust line height */
+    }
+}
+
+/* Scroll animation */
+@keyframes scrollUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
 }

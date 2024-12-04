@@ -38,8 +38,10 @@ const Carousel = () => {
                 spaceBetween: 20,
               }
             }}
-            centeredSlides={true}
-            pagination={{ type: 'bullets' }}
+            centeredSlides={false}  // Ensure the first slide is at the beginning
+            initialSlide={0}  // Start with the first slide
+            spaceBetween={30}
+            pagination={{ type: 'fraction' }}
             navigation={true}
             modules={[Pagination, Navigation]}
             className={styles.mySwiper}
