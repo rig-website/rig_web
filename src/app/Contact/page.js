@@ -1,6 +1,6 @@
 import styles from '../Contact/contact.module.css';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+
 
 const Contact = () => {
   return (
@@ -35,7 +35,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer />
+    
     </div>
   );
 };

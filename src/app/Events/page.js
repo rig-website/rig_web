@@ -1,7 +1,7 @@
 import styles from "../Events/event.module.css";
 import Navbar from "../components/Navbar";
 import eventData from './eventData'; 
-import Footer from "../components/Footer";
+
 
 const Page = () => {
   return (
@@ -15,7 +15,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <Footer />
+   
     </div>
   );
 };

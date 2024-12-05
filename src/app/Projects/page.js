@@ -3,7 +3,6 @@ import styles from '../Projects/project.module.css';
 import Navbar from "../components/Navbar";
 import Contact from '../components/Footer';
 import projectData from './projectdata';
-import Footer from '../components/Footer';
 
 function ProjectCard({ title, description }) {
   return (
@@ -29,7 +28,7 @@ function Page() {
           ))}
         </div>
       </div>
-  <Footer />
+  
   </>
   );
 }
