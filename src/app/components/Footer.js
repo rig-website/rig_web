@@ -98,11 +98,11 @@ const Footer = () => {
           <div className={styles.boxcont}>
             <div className={styles.list} ref={el => linksRef.current[0] = el}><Link href="/">Home</Link></div>
             <div className={styles.list} ref={el => linksRef.current[1] = el}><Link href="/About">About</Link></div>
-            <div className={styles.list} ref={el => linksRef.current[2] = el}><Link href="/projects">Projects</Link></div>
-            <div className={styles.list} ref={el => linksRef.current[3] = el}><Link href="/events">Events</Link></div>
-            <div className={styles.list} ref={el => linksRef.current[4] = el}><Link href="/team">Team</Link></div>
-            <div className={styles.list} ref={el => linksRef.current[5] = el}><Link href="/contact">Contacts</Link></div>
-            <div className={styles.list} ref={el => linksRef.current[6] = el}><Link href="/achievements">Achievements</Link></div>
+            <div className={styles.list} ref={el => linksRef.current[2] = el}><Link href="/Projects">Projects</Link></div>
+            <div className={styles.list} ref={el => linksRef.current[3] = el}><Link href="/Events">Events</Link></div>
+            <div className={styles.list} ref={el => linksRef.current[4] = el}><Link href="/Team">Team</Link></div>
+            <div className={styles.list} ref={el => linksRef.current[5] = el}><Link href="/Contact">Contacts</Link></div>
+            <div className={styles.list} ref={el => linksRef.current[6] = el}><Link href="/Achievements">Achievements</Link></div>
           </div>
         </div>
         
