@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '@/app/styles/landing.module.css';
 
 export const Landing = () => {
-  const images = ['/img2.png', '/landing.jpg']; // Array of images
+  const images = ['/img2.png', '/img1.png' ,'/eventImages/image4.jpeg','/eventImages/image1.jpeg']; // Array of images
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const newsItems = [

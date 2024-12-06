@@ -3,7 +3,7 @@
 .landing {
     display: flex;
     flex-direction: row;
-    min-height: 85vh; /* Ensure full viewport height */
+    min-height: 83vh; /* Ensure full viewport height */
     overflow: hidden;
     width: 100%; /* Full viewport width */
    
