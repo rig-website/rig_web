@@ -52,8 +52,10 @@
   font-size: 3rem;
   font-family: 'Just Another Hand', cursive;
   font-weight: bold; 
-  color: #242754; 
+  color: #eff0ec; 
   margin: 0;
+  text-shadow: #242754;
+  text-decoration: underline;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   padding-top: 2rem;
   margin-bottom: 2rem; 
