@@ -24,7 +24,7 @@ export const Landing = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length); // Loop through images
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, [images.length]);
