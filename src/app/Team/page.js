@@ -96,7 +96,7 @@ const Page = () => {
                 </div>
                 <div className={styles.details}>
                   <div className={styles.inData}>
-                    <p className={styles.name}>{member.name}</p>
+                    <p className={styles.name}>{member.name.substring(0, 18)}</p>
                     <p className={styles.position}>{member.position}</p>
                     <div className={styles.icons}>
                       <p className={styles.year}>{member.year}</p>

@@ -108,7 +108,7 @@
         // "position": "Developer"
       },
       {
-        "name": "Chandrabhusan Kumar",
+        "name": "Chandrabhusan",
         "linkedin": "/",
         "presentation": "/CB.png",
         "year": "Developer",
