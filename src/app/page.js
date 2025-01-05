@@ -11,8 +11,9 @@ const page = () => {
       <Navbar/>
       <Landing/>
 
-      {/* <Carousel/> */}
+      <Carousel/>
       <Content/>
+      <Events/>
       {/* <TeamDash/> */}
       <Contact/>
     </>

@@ -1,49 +1,41 @@
-/*import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css'; // Adjust import path to use the full bundle CSS
-import 'swiper/components/effect-coverflow/effect-coverflow.min.css';
-import 'swiper/components/pagination/pagination.min.css';
-import 'swiper/components/navigation/navigation.min.css';
-import SwiperCore, { EffectCoverflow, Pagination, Navigation } from 'swiper/core';
-import styles from '@/app/styles/events.module.css'; // Adjust import path according to your project structure
-
-SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
+'use client'
+import React, { useState } from "react";
+import styles from '@/app/styles/events.module.css';
 
 const Events = () => {
+  const [activeIndex, setActiveIndex] = useState(3); 
+  const images = [
+    { src: "/eventImages/image1.jpeg", alt: "1", title: "R.I.G" },
+    { src: "/eventImages/image2.jpeg", alt: "2", title: "R.I.G" },
+    { src: "/eventImages/image3.jpeg", alt: "3", title: "R.I.G" },
+    { src: "/eventImages/image4.jpeg", alt: "4", title: "R.I.G" },
+    { src: "/eventImages/image5.jpeg", alt: "5", title: "R.I.G" },
+    { src: "/eventImages/image1.jpeg", alt: "6", title: "R.I.G" },
+    { src: "/eventImages/image2.jpeg", alt: "7", title: "R.I.G" },
+  ];
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+  };
+
   return (
-    <div className={styles.container}>
-      <h1 className={styles.heading}>Events</h1>
-      <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-        }}
-        className={styles.swipercontainer}
-        pagination={{ clickable: true }}
-        navigation={true}
-      >
-        <SwiperSlide>
-          <img src="/img1.png" alt="Image 1" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/img2.png" alt="Image 2" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/img3.png" alt="Image 3" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/img4.png" alt="Image 4" />
-        </SwiperSlide>
-      </Swiper>
-    </div>
+    <section className={styles.sliderContainer}>
+      <div className={styles.sliderImages}>
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`${styles.sliderImg} ${
+              activeIndex === index ? styles.active : ""
+            }`}
+            onClick={() => handleClick(index)}
+          >
+            <img src={image.src} alt={image.alt} />
+            <h1 className={styles.he}>{image.title}</h1>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
-export default Events;*/
+export default Events;
