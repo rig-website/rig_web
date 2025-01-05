@@ -36,7 +36,7 @@ export const Landing = () => {
           <div className={styles.img}>
             <Image 
               src={images[currentImageIndex]} // Use the current image index
-              alt='picture of robot'
+              alt='Rig insights'
               layout="fill"
               style={{ objectFit: 'cover' }} // Adjust this as per your need
               priority

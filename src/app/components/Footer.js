@@ -112,7 +112,7 @@ const Footer = () => {
             <span className={styles.navigate}>Enter to RIG console</span>
             <div className={styles.navigate}><i>*only rig members are allowed</i></div>
             <div>
-              <input type='text' className={styles.rigid} placeholder='RIG ID' autoFocus={true} />
+              <input type='text' className={styles.rigid} placeholder='RIG ID'  />
             </div>
             <div className={styles.passwordWrapper}>
               <input 
