@@ -6,7 +6,9 @@
     min-height: 83vh; /* Ensure full viewport height */
     overflow: hidden;
     width: 100%; /* Full viewport width */
-   
+   @media(max-width:600px){
+ /* min-width: 53vh; */
+   }
 }
 
 .hero {
@@ -22,12 +24,12 @@
 
     @media(max-width: 600px) {
         width: 100vw; /* Full width on mobile */
-        height: 50vh; /* Restrict height to avoid stretching */
+        /* height: 50vh; Restrict height to avoid stretching */
     }
 
     @media(max-width: 400px) {
         width: 100vw; /* Full width on mobile */
-        height: 50vh; 
+        /* height: 50vh;  */
     }
 }
 
