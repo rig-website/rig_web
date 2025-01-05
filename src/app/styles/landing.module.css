@@ -56,12 +56,12 @@
     justify-content: center; /* Center content vertically by default */
 
     @media(max-width: 1000px) {
-        width: 40vw;
+        /* width: 40vw; */
     }
 
     @media(max-width: 600px) {
         width: 100%; /* Full width on mobile */
-        height: 50vh; /* Auto height for smaller screens */
+        /* height: 50vh; Auto height for smaller screens */
         text-align: justify;
         justify-content: space-between; /* Align items to start by default */
         padding-top: 50px;
@@ -69,7 +69,7 @@
     
     @media(max-width: 400px) {
         width: 100%; /* Full width on smaller devices */
-        height: 50vh; /* Maintain height proportional */
+        /* height: 50vh; Maintain height proportional */
         padding: 10px; /* Reduced padding on small screens */
         padding-top: 50px;
         justify-content: space-between   ; /* Align content to the bottom */
