@@ -31,19 +31,19 @@
 
 .sliderImg:first-child,
 .sliderImg:last-child {
-  height: 480px; 
+  height: 33vw; 
 }
 
 .sliderImg:nth-child(2),
 .sliderImg:nth-child(6) {
-  height: 480px; 
+  height: 34vw; 
 }
 
 .sliderImg:nth-child(3),
 .sliderImg:nth-child(4),
 .sliderImg:nth-child(5) 
 {
-  height: 480px; 
+  height: 35vw; 
 }
 
 .he {
@@ -59,13 +59,11 @@
 }
 
 .sliderImg.active {
-  width: 480px !important; 
-  height: 480px !important;
+  width: 40vw !important; 
+  height: 35vw !important;
   .he {
     display: none;
   }
 }
 
-.sliderImg.active h1 {
-  display: none;
-}
+
