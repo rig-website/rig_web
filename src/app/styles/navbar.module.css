@@ -1,0 +1,230 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #E9EDFB;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.navbar > :first-child {
+  margin-right: auto;
+}
+
+.navbar > *:not(:first-child) {
+  margin-left: 1rem;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 70%;
+  background-color: rgba(185, 189, 244, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  border-radius: 10px 0 0 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: black;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo {
+  width: auto;
+}
+
+.logonew {
+  display: none;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 400;
+  color: #2B4257;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+}
+
+.link:hover {
+  color: #3A5798;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.sidebarLink {
+  margin: 1rem;
+  text-transform: capitalize;
+  font-size: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+}
+
+.sidebarLink:hover {
+  color: #3A5798;
+}
+
+.box {
+  width: 100%;
+  height: 4.2vh;
+  background-color: #BEC9F4;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 1100px) {
+  .links {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  .rig {
+    display: none;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .sidebar {
+    width: 85%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logonew {
+    display: block;
+  }
+
+  /* Mobile login button (sidebar) */
+  .authButton {
+    display: none;  /* Hide desktop version of authButton */
+  }
+
+  /* .sidebarAuthButton {
+    display: block; 
+  } */
+}
+
+/* Sidebar visibility */
+.visible {
+  transform: translateX(0);
+}
+
+.hidden {
+  transform: translateX(100%);
+}
+
+.authBox {
+  display: flex;
+  align-items: center;
+}
+
+.loginButton {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #3A5798;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.loginButton:hover {
+  background-color: #2C4373; /* Fixed missing hex code */
+}
+
+.logoutButton {
+  background-color: #D32F2F;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.logoutButton:hover {
+  background-color: #9C2727;
+}
+
+.authButton {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  margin-left: 1rem;
+  transition: background-color 0.2s;
+}
+
+.authButton:hover {
+  background-color: #2563eb;
+}
+
+.sidebarAuthButton {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  margin-top: 1rem;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.sidebarAuthButton:hover {
+  background-color: #2563eb;
+}
+
+/* Desktop login button (authButton) */
+.authButton {
+  display: block;  /* Show authButton on desktop */
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  margin-left: 1rem;
+  transition: background-color 0.2s;
+}
+
+/* Hide the mobile login button when on desktop */
+@media (min-width: 451px) {
+  .sidebarAuthButton {
+    display: none;  /* Hide sidebarAuthButton on desktop */
+  }
+}
