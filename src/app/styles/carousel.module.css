@@ -4,62 +4,60 @@
     color: black;
     background-color: aliceblue;
     text-align: center;
-    align-content: center;
     font-size: 30px;
     font-weight: bold;
-    @media(max-width:600px ) {
+    @media(max-width:600px) {
         font-size: 20px;
-     }
+    }
 }
 
 .body {
     background-color: aliceblue;
     width: 100%;
-    text-align: center;
+    padding: 40px 0;
     color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .card {
     background-color: aliceblue;
     border-radius: 10px;
     overflow: hidden;
-    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
 }
 
-/* Adjust the image styling to be responsive */
-.image img {
+.image {
     width: 100%;
-  
-    height: auto;
+    aspect-ratio: 16/9;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.image img {
+    object-fit: cover !important;
     border-radius: 15px;
 }
 
 .nameproject {
     margin-top: 15px;
+    text-align: center;
+    width: 100%;
 }
 
 .name {
     font-size: 25px;
     font-weight: bolder;
     color: #000;
-
 }
 
 .mySwiper {
@@ -67,59 +65,36 @@
 }
 
 /* Responsive styles */
-
-/* For large screens (laptops/desktops) */
 @media (min-width: 1024px) {
     .container {
-        width: 80%;
+        padding: 0 40px;
     }
-
-    .card {
-        width: 300px;
-    }
-
-    .mySwiper {
-        padding: 40px 0;
+    
+    .name {
+        font-size: 25px;
     }
 }
 
-/* For tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
     .container {
-        width: 90%;
+        padding: 0 30px;
     }
-
-    .card {
-        width: 250px;
-    }
-
-    .mySwiper {
-        padding: 30px 0;
+    
+    .name {
+        font-size: 20px;
     }
 }
 
-/* For mobile phones */
 @media (max-width: 767px) {
     .container {
-        width: 95%;
-        /* height: 10vw; */
+        padding: 0 20px;
     }
-
-    .card {
-        width:200px;
-    }
-
+    
     .name {
         font-size: 15px;
     }
-
-    .mySwiper {
-        padding: 20px 0;
-    }
     
-    /* Adjust the number of slides visible */
-    .swiper-slide {
-        flex-shrink: 0;
-        width: calc(100% - 20px);
+    .image {
+        aspect-ratio: 4/3;
     }
 }

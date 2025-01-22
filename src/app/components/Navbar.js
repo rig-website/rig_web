@@ -6,16 +6,21 @@ import styles from '@/app/styles/navbar.module.css';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout } from '@/redux/authSlice';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.auth.isLogin);
 
-  // Refs for animations
   const sidebarLinksRef = useRef([]);
   const desktopLinksRef = useRef([]);
-  const logoRef = useRef(null); // Ref for main logo
-  const rigLogoRef = useRef(null); // Ref for rig logo
+  const logoRef = useRef(null);
+  const rigLogoRef = useRef(null);
 
   const toggleSidebar = () => {
     setSidebarVisible(!isSidebarVisible);
@@ -23,6 +28,21 @@ const Navbar = () => {
 
   const closeSidebar = () => {
     setSidebarVisible(false);
+  };
+
+  useEffect(() => {
+    if (!isLogin && pathname == '/login') {
+      router.push('/login');
+    }
+  }, [pathname, isLogin, router]);
+
+  const handleAuth = () => {
+    if (isLogin) {
+      dispatch(logout());
+      router.push('/');
+    } else {
+      router.push('/login');
+    }
   };
 
   useEffect(() => {
@@ -41,7 +61,7 @@ const Navbar = () => {
         }
       );
     }
-  }, [isSidebarVisible]); // This only runs when `isSidebarVisible` changes
+  }, [isSidebarVisible]);
 
   return (
     <>
@@ -63,14 +83,31 @@ const Navbar = () => {
         <div className={styles.links} ref={el => { 
           if (el) desktopLinksRef.current = Array.from(el.querySelectorAll(`.${styles.link}`));
         }}>
-          <Link href="/" className={`${styles.link} ${pathname === '/' ? styles.active : ''}`}>Home</Link>
-          <Link href="/About" className={`${styles.link} ${pathname === '/About' ? styles.active : ''}`}>About</Link>
-          <Link href="/Projects" className={`${styles.link} ${pathname === '/Projects' ? styles.active : ''}`}>Projects</Link>
-          <Link href="/Achievements" className={`${styles.link} ${pathname === '/Achievements' ? styles.active : ''}`}>Achievements</Link>
-          <Link href="/Events" className={`${styles.link} ${pathname === '/Events' ? styles.active : ''}`}>Events</Link>
-          <Link href="/Team" className={`${styles.link} ${pathname === '/Team' ? styles.active : ''}`}>Team</Link>
+          <Link href="/" className={`${styles.sidebarLink} ${pathname === '/' ? styles.active : ''}`}>Home</Link>
+          <Link href="/About" className={`${styles.sidebarLink} ${pathname === '/About' ? styles.active : ''}`}>About</Link>
+          <Link href="/Projects" className={`${styles.sidebarLink} ${pathname === '/Projects' ? styles.active : ''}`}>Projects</Link>
+          <Link href="/Achievements" className={`${styles.sidebarLink} ${pathname === '/Achievements' ? styles.active : ''}`}>Achievements</Link>
+          <Link href="/Events" className={`${styles.sidebarLink} ${pathname === '/Events' ? styles.active : ''}`}>Events</Link>
+          <Link href="/Team" className={`${styles.sidebarLink} ${pathname === '/Team' ? styles.active : ''}`}>Team</Link>
+
+          {isLogin && (
+            <>
+              <Link href="/addEvents" className={`${styles.sidebarLink} ${pathname === '/addEvents' ? styles.active : ''}`}>Add-Events</Link>
+              <Link href="/addProjects" className={`${styles.sidebarLink} ${pathname === '/addProjects' ? styles.active : ''}`}>Add-Projects</Link>
+            </>
+          )}
+
           <Link href="/Contact" className={`${styles.link} ${pathname === '/Contact' ? styles.active : ''}`}>Contact</Link>
         </div>
+
+        {/* Desktop Login/Logout Button */}
+        <button
+          onClick={handleAuth}
+          className={styles.authButton} // Desktop version
+        >
+          {isLogin ? 'Logout' : 'Login'}
+        </button>
+
         <div className={styles.rig}>
           <Link href="/">
             <div className={styles.logo} ref={rigLogoRef}>
@@ -80,6 +117,7 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
+
         <button
           className={styles.menuButton}
           onClick={toggleSidebar}
@@ -105,18 +143,33 @@ const Navbar = () => {
               <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
             </svg>
           </button>
+
           <Link href="/" className={`${styles.sidebarLink} ${pathname === '/' ? styles.active : ''}`}>Home</Link>
           <Link href="/About" className={`${styles.sidebarLink} ${pathname === '/About' ? styles.active : ''}`}>About</Link>
           <Link href="/Projects" className={`${styles.sidebarLink} ${pathname === '/Projects' ? styles.active : ''}`}>Projects</Link>
           <Link href="/Achievements" className={`${styles.sidebarLink} ${pathname === '/Achievements' ? styles.active : ''}`}>Achievements</Link>
           <Link href="/Events" className={`${styles.sidebarLink} ${pathname === '/Events' ? styles.active : ''}`}>Events</Link>
           <Link href="/Team" className={`${styles.sidebarLink} ${pathname === '/Team' ? styles.active : ''}`}>Team</Link>
+
+          {isLogin && (
+            <>
+              <Link href="/addEvents" className={`${styles.sidebarLink} ${pathname === '/addEvents' ? styles.active : ''}`}>Add-Events</Link>
+              <Link href="/addProjects" className={`${styles.sidebarLink} ${pathname === '/addProjects' ? styles.active : ''}`}>Add-Projects</Link>
+            </>
+          )}
+
           <Link href="/Contact" className={`${styles.sidebarLink} ${pathname === '/Contact' ? styles.active : ''}`}>Contact</Link>
+
+          {/* Mobile Login/Logout Button */}
+          <button
+            onClick={handleAuth}
+            className={styles.sidebarAuthButton} // Mobile version
+          >
+            {isLogin ? 'Logout' : 'Login'}
+          </button>
         </div>
       </div>
-      <div className={styles.box}>
-
-      </div>
+      <div className={styles.box}></div>
     </>
   );
 };

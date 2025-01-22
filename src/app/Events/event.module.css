@@ -86,10 +86,10 @@
     background-image: url('/eventImages/image3.jpeg');
   }
   60% {
-    background-image: url('/eventImages/image4.jpeg');
+    background-image: url('/eventImages/image4.jpg');
   }
   80% {
-    background-image: url('/eventImages/image5.jpeg');
+    background-image: url('/eventImages/image5.jpg');
   }
   100% {
     background-image: url('/eventImages/image1.jpeg');

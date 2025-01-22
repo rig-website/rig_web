@@ -3,6 +3,7 @@
 
 .root {
     background-color: #f9f9f9;
+    height: 100vh;
     padding: 2rem;
     display: flex;
     justify-content: center;
@@ -10,6 +11,7 @@
     overflow-y: auto;
 }
 .heading {
+  
     background-color: #fff;
     font-size: 3rem;
     font-family: 'Just Another Hand', cursive;
@@ -24,6 +26,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
   gap: 2rem;
   width: 60%;
 }

@@ -2,14 +2,20 @@
 
 .container {
   display: flex;
-  height: calc(100vh - 7rem); 
+  height:100vh;
   flex-direction: column;
     padding: 2rem;
     background-color: #fff;
     border-radius: 8px;
     color: #666;
     font-family: Arial, sans-serif;
-  
+    @media(max-width: 900px){
+      height: 100vh;
+    }
+    @media(max-width: 300px){
+      height: 150vh;
+    }
+    overflow: hidden;
   }
 
   .header {
