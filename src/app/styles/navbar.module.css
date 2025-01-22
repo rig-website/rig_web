@@ -1,3 +1,4 @@
+/* Main navbar styles */
 .navbar {
   display: flex;
   align-items: center;
@@ -15,9 +16,8 @@
 }
 
 .navbar > *:not(:first-child) {
-  margin-left: 1rem;
+  margin-left:1rem;
 }
-
 
 .sidebar {
   position: fixed;
@@ -112,6 +112,16 @@
   .rig {
     display: none;
   }
+  /* Mobile login button (sidebar) */
+  .authButton {
+    display: none;  /* Hide desktop version of authButton */
+  }
+
+  .sidebarAuthButton {
+
+    display: flex;  /* Show mobile version of authButton */
+
+  }
 
 }
 
@@ -132,14 +142,6 @@
     display: block;
   }
 
-  /* Mobile login button (sidebar) */
-  .authButton {
-    display: none;  /* Hide desktop version of authButton */
-  }
-
-  /* .sidebarAuthButton {
-    display: block; 
-  } */
 }
 
 /* Sidebar visibility */
@@ -157,6 +159,7 @@
 }
 
 .loginButton {
+  /* display: block; */
   margin: 0 1rem;
   padding: 0.5rem 1rem;
   background-color: #3A5798;
@@ -203,7 +206,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   margin-top: 1rem;
-  width: 100%;
+  /* width: 50%; */
   transition: background-color 0.2s;
 }
 
@@ -213,18 +216,18 @@
 
 /* Desktop login button (authButton) */
 .authButton {
-  display: block;  /* Show authButton on desktop */
+  display: flex;  /* Show authButton on desktop */
+  /* width: 50%; */
   background-color: #3b82f6;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   margin-left: 1rem;
   transition: background-color 0.2s;
+  /* css of this button gettting override here */
+  @media(max-width: 1100px) {
+    display: none;  /* Hide mobile version of authButton */
+  }
 }
 
 /* Hide the mobile login button when on desktop */
-@media (min-width: 451px) {
-  .sidebarAuthButton {
-    display: none;  /* Hide sidebarAuthButton on desktop */
-  }
-}

@@ -91,37 +91,63 @@ const Footer = () => {
   ];
 
   return (
-    <footer className={styles.contact}>
-      <div className={styles.linksContainer}>
-        <div className={styles.links}>
-          {navigationLinks.map((link, index) => (
-            <div className={styles.list} key={index} ref={(el) => (linksRef.current[index] = el)}>
-              <Link href={link.path}>{link.name}</Link>
+    <>
+    <center><div className={styles.text1}>contact us</div></center>
+    <div className={styles.contact}>
+        <div className={styles.up}>
+            <div className={styles.child1}>
+                <span>SOCIAL HANDLES</span>
             </div>
-          ))}
+            <div className={styles.child2}>
+                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../insta.svg' ></img></a></div>
+                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../x.svg'></img></a></div>
+                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../linkedin.svg'></img></a></div>
+                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../discord.svg'></img></a></div>
+                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../mail.svg'></img></a></div>
+            </div>
         </div>
-      </div>
-
-      <div className={styles.socialContainer}>
-        <div className={styles.socialIcons}>
-          {['icon-insta', 'icon-x', 'icon-linked-in'].map((icon, index) => (
-            <a 
-              href="#" 
-              key={index} 
-              ref={(el) => (socialIconsRef.current[index] = el)} 
-              className={styles.icon}
-            >
-              <img src={`/${icon}.svg`} alt={icon} width={35} height={35} />
-            </a>
-          ))}
+        <div className={styles.middle}>
+            <div className={styles.boxtitle}>
+            <   span className={styles.navigate}>NAVIGATION</span>
+            </div>
+            <div className={styles.boxmenu}>
+                <a className={styles.list}>HOME</a>
+                <a className={styles.list}>ABOUT US</a>
+                <a className={styles.list}>PROJECTS</a>
+                <a className={styles.list}>ACHEIVEMENTS</a>
+                <a className={styles.list}>EVENTS</a>
+                <a className={styles.list}>TEAM</a>
+                <a className={styles.list}>CONTACTS</a>
+            </div>
         </div>
-        <div className={styles.address} ref={addressRef}>
-          <p>RIG Club</p>
-          <p>Indiranagar</p>
-          <p>Bangalore</p>
+        <div className={styles.line}></div>
+        <div className={styles.down}>
+            <div className={styles.add}>
+                <div className={styles.address}>ADDRESS</div>
+                MECHATRONICS/ROBOTICS LAB
+                <br/>
+                MECHANICAL ENGINEERING DEPARTMENT
+                <br/>
+                NATIONAL INSTITUTE OF TECHNOLOGY CALICUT, NITC CAMPUS
+                <br/>
+                P.O.- KOZHIKODE,KERALA,INDIA
+                <br/>
+                PIN- 673601
+            </div>
+            <div className={styles.login}>
+                <span className={styles.navigate}>Enter to RIG console</span>
+                <div className={styles.loginDetails}>
+                    <input type='text' className={styles.rigid} placeholder='RIG ID'></input>
+                    <input type='password' className={styles.pass} placeholder='PASSWORD'></input>
+                </div>
+                <center>
+                    <div className={styles.btn}>login</div>
+                    <span className={styles.access}><i>*only rig members are allowed</i></span>
+                </center>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+    </>
   );
 };
 
