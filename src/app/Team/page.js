@@ -5,7 +5,7 @@ import Image from 'next/image';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import styles from './Team.module.css';
+import styles from './team.module.css';
 import Navbar from '../components/Navbar';
 import { useSelector } from 'react-redux';
 
@@ -111,47 +111,44 @@ const Team = () => {
       </div>
 
       {isLogin && (
-        <form onSubmit={handleSubmit} className={styles.form}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={members.name}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="url"
-          name="linkedin"
-          placeholder="LinkedIn URL"
-          value={members.linkedin}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="url"
-          name="presentation"
-          placeholder="Image URL"
-          value={members.presentation}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="text"
-          name="position"
-          placeholder="Position"
-          value={members.position}
-          onChange={handleInputChange}
-          required
-        />
-        <button
-          type="submit"
-          disabled={loading}
-        >
-          {loading ? "Adding..." : "Add Member"}
-        </button>
-      </form>
-      )}
+  <form onSubmit={handleSubmit} className={styles.memberForm}>
+    <input
+      type="text"
+      name="name"
+      placeholder="Name"
+      value={members.name}
+      onChange={handleInputChange}
+      required
+    />
+    <input
+      type="url"
+      name="linkedin"
+      placeholder="LinkedIn URL"
+      value={members.linkedin}
+      onChange={handleInputChange}
+      required
+    />
+    <input
+      type="url"
+      name="presentation"
+      placeholder="Image URL"
+      value={members.presentation}
+      onChange={handleInputChange}
+      required
+    />
+    <input
+      type="text"
+      name="position"
+      placeholder="Position"
+      value={members.position}
+      onChange={handleInputChange}
+      required
+    />
+    <button type="submit" disabled={loading}>
+      {loading ? "Adding..." : "Add Member"}
+    </button>
+  </form>
+)}
 
       {error && <div className={styles.error}>{error}</div>}
 

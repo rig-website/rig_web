@@ -1,77 +1,92 @@
-.backbeam{
+.backbeam {
     background-color: white;
     color: black;
     padding-left: 40px;
     padding-right: 40px;
-    
 }
-.body{
+
+.body {
     background-color: white;
     text-align: justify;
 }
-.teamH{
+
+.teamH {
     padding-top: 20px;
-   
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
     font-weight: bolder;
     text-transform: uppercase;
-    @media(max-width:650px){
+}
+
+@media (max-width: 650px) {
+    .teamH {
         font-size: 30px;
     }
 }
-.heads{
+
+.heads {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 40px;
-    /* margin-bottom: 40px; */
 }
-.headerCenter{
+
+.headerCenter {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.dots{
+
+.dots {
     height: 20px;
     width: 250px;
     color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
 }
-.dot{
+
+.dot {
     background-color: rgb(0, 0, 0);
     height: 8px;
     width: 8px;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    @media(max-width:650px){
-        width: 6px; height: 6px;
+}
+
+@media (max-width: 650px) {
+    .dot {
+        width: 6px;
+        height: 6px;
     }
 }
 
-.members{
-
+.members {
     display: flex;
-   padding-top: 20px;
-   min-height: 70vh;
-   padding-bottom: 30px;
-    /* grid-template-columns: repeat(6, 1fr); */
+    padding-top: 20px;
+    min-height: 70vh;
+    padding-bottom: 30px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 110px;  
-    @media(max-width:700px){
+    gap: 110px;
+}
+
+@media (max-width: 700px) {
+    .members {
         gap: 50px;
     }
-    @media(max-width:500px){
+}
+
+@media (max-width: 500px) {
+    .members {
         gap: 10px;
     }
 }
+
 .member {
     border: 0.5px solid rgb(139, 222, 239);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -83,29 +98,40 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
-  .member:hover {
+}
+
+.member:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
     transform: scale(1.05);
-  }
-  
-.inData{
+}
+
+.inData {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.name{
+
+.name {
     font-weight: bolder;
-    @media(max-width: 700px) {
+}
+
+@media (max-width: 700px) {
+    .name {
         font-size: 15px;
     }
 }
-.position{
-    @media(max-width: 700px) {
+
+.position {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+    .position {
         font-size: 15px;
     }
 }
-.icons{
+
+.icons {
     display: flex;
     margin: 10px;
     flex-direction: row-reverse;
@@ -114,63 +140,137 @@
     align-items: center;
 }
 
-.icon{
-    /* color: blue; */
+.icon {
     width: 30px;
     height: 30px;
 }
-.nomember{
+
+.nomember {
     display: flex;
     height: 70vh;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
+
 .photo {
     width: 200px;
     height: 180px;
     object-fit: cover;
-@media(max-width:700px){
-    width: 180px;
-    height: 160px;
-}  
-@media(max-width:500px){
-    width: 150px;
-    height: 140px;}
-
-    
 }
-  .yearSelector {
+
+@media (max-width: 700px) {
+    .photo {
+        width: 180px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 500px) {
+    .photo {
+        width: 150px;
+        height: 140px;
+    }
+}
+
+.yearSelector {
     margin: 20px 0;
     display: flex;
     align-items: center;
-  }
-  
-  .yearSelector label {
+}
+
+.yearSelector label {
     margin-right: 10px;
     font-size: 16px;
     color: #333;
-  }
-  
-  .yearSelector select {
+}
+
+.yearSelector select {
     padding: 5px 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
     cursor: pointer;
+}
+
+.yearSelector select:focus {
+    border-color: #0070f3;
+    box-shadow: 0 0 0 2px rgba(0, 112, 255, 0.2);
+}
+
+.b {
+    text-align: justify;
+}
+
+.loder {
+    color: black;
+    z-index: 10;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.memberForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%; /* Ensure it's responsive */
+    margin: 20px auto; /* Center the form and add some vertical spacing */
   }
   
-  .yearSelector select:focus {
+  .memberForm input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .memberForm input:focus {
+    outline: none;
     border-color: #0070f3;
     box-shadow: 0 0 0 2px rgba(0, 112, 255, 0.2);
   }
   
-.b{
-    text-align: justify;
-}
+  .memberForm button {
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
   
-.loder{
-    color: black;
-    z-index: 10;
-}
+  .memberForm button:hover {
+    background-color: #005bb5;
+  }
+  
+  .memberForm button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 600px) {
+    .memberForm {
+      width: 95%;
+      padding: 15px;
+    }
+  
+    .memberForm input,
+    .memberForm button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }

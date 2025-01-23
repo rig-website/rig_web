@@ -39,16 +39,14 @@ const Navbar = () => {
           dispatch(login());
         } else {
           dispatch(logout());
-          router.push('/login');
         }
       } catch (error) {
         dispatch(logout());
-        router.push('/login');
       }
     };
 
     verifyToken();
-  }, [dispatch, router]);
+  }, [dispatch]);
 
   const handleAuth = async () => {
     if (isLogin) {
@@ -60,9 +58,10 @@ const Navbar = () => {
         console.error("Logout failed", error);
       }
     } else {
-      router.push('/login');
+      router.push('/login'); // Redirect only when the button is clicked
     }
   };
+
   useEffect(() => {
     const isDesktop = window.innerWidth >= 1024;
 
