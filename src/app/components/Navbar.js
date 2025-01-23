@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from '@/redux/authSlice';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 const Navbar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
@@ -31,20 +32,37 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (!isLogin && pathname == '/login') {
-      router.push('/login');
-    }
-  }, [pathname, isLogin, router]);
+    const verifyToken = async () => {
+      try {
+        const response = await axios.get('/api/verify-token');
+        if (response.data.valid) {
+          dispatch(login());
+        } else {
+          dispatch(logout());
+          router.push('/login');
+        }
+      } catch (error) {
+        dispatch(logout());
+        router.push('/login');
+      }
+    };
 
-  const handleAuth = () => {
+    verifyToken();
+  }, [dispatch, router]);
+
+  const handleAuth = async () => {
     if (isLogin) {
-      dispatch(logout());
-      router.push('/');
+      try {
+        await axios.post("/api/logout");
+        dispatch(logout());
+        router.push('/');
+      } catch (error) {
+        console.error("Logout failed", error);
+      }
     } else {
       router.push('/login');
     }
   };
-
   useEffect(() => {
     const isDesktop = window.innerWidth >= 1024;
 
@@ -97,7 +115,7 @@ const Navbar = () => {
             </>
           )}
 
-          <Link href="/Contact" className={`${styles.link} ${pathname === '/Contact' ? styles.active : ''}`}>Contact</Link>
+          <Link href="/Contact" className={`${styles.sidebarLink} ${pathname === '/Contact' ? styles.active : ''}`}>Contact</Link>
         </div>
 
         {/* Desktop Login/Logout Button */}

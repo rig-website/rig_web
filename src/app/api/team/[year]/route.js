@@ -1,38 +1,34 @@
 import dbconnect from "@/Libs/mongodb";
 import { NextResponse } from "next/server";
-import Member from "@/Libs/mongodb.js";
+import Member from "@/Models/memberModel.js";
 
 export async function GET(request, { params }) {
-  const { year } = params; 
-
   try {
-    
+    const { year } = params;
+
     if (!year) {
       return NextResponse.json(
-        { message: "Year is required", success: false },
+        { message: "Year parameter is required", success: false },
         { status: 400 }
       );
     }
 
-   
     await dbconnect();
 
-  
     const members = await Member.find({ year });
 
     if (!members || members.length === 0) {
       return NextResponse.json(
-        { message: "No members found for the provided year", success: false },
+        { message: `No members found for the year ${year}`, success: false },
         { status: 404 }
       );
     }
 
-  
     return NextResponse.json(
       {
         message: "Members retrieved successfully",
         success: true,
-        data: members, 
+        data: members,
       },
       { status: 200 }
     );

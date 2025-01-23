@@ -1,122 +1,207 @@
-'use client'
-import { useState } from 'react'; // Import useState for managing selected year
-import { FaLinkedinIn } from 'react-icons/fa';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import styles from './Team.module.css';
 import Navbar from '../components/Navbar';
-import styles from '@/app/Team/team.module.css';
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-import teamMembers from './team.js';
+import { useSelector } from 'react-redux';
 
-const Page = () => {
-  const [selectedYear, setSelectedYear] = useState('2021-2025');
-  const membersRef = useRef([]);
-  const [loading, setLoading] = useState({}); // Object to store loading state for each image
+const Team = () => {
+  const isLogin = useSelector((state) => state.auth.isLogin);
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [selectedYear, setSelectedYear] = useState("2021-2025");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [members, setMembers] = useState({
+    name: "",
+    linkedin: "",
+    presentation: "",
+    position: "",
+  });
 
-  const filterTeamMembersByYear = (year) => {
-    return teamMembers.filter(member => member.year === year);
+  useEffect(() => {
+    fetchMembers();
+  }, [selectedYear]);
+
+  const fetchMembers = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.get(`/api/team/${selectedYear}`);
+      if (response.data.success) {
+        setTeamMembers(response.data.data);
+      } else {
+        setTeamMembers([]);
+        setError(response.data.message || "No team members found.");
+      }
+    } catch (err) {
+      console.error("Error fetching team members:", err);
+      setError(err.response?.data?.message || "Failed to fetch team members.");
+      setTeamMembers([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const filteredTeamMembers = filterTeamMembersByYear(selectedYear);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setMembers((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await axios.post('/api/team', {
+        ...members,
+        year: selectedYear,
+      });
+
+      if (response.data.success) {
+        fetchMembers();
+        setMembers({
+          name: "",
+          linkedin: "",
+          presentation: "",
+          position: "",
+        });
+      } else {
+        setError(response.data.message || "Failed to add member.");
+      }
+    } catch (err) {
+      console.error("Error adding team member:", err);
+      setError(err.response?.data?.message || "Error occurred while adding.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleYearChange = (e) => {
     setSelectedYear(e.target.value);
   };
 
-  useEffect(() => {
-    const validMembers = membersRef.current.filter(member => member !== null);
-    if (validMembers.length > 0) {
-      
-    }
-  }, [filteredTeamMembers]);
-
-  const handleLoadingComplete = (name) => {
-    setLoading((prev) => ({ ...prev, [name]: false }));
-  };
-
   return (
     <>
-      <Navbar />
+    <Navbar />
+    <div className={styles.backbeam}>
+      <div className={styles.heads}>
+        <div className={styles.teamH}>Our Team</div>
+      </div>
 
-      <div className={styles.backbeam}>
-        <div className={styles.heads}>
-          <div className={styles.headerCenter}>
-            <div className={styles.teamH}>Our Team</div>
-            <div className={styles.dots}>
-              {[...Array(12)].map((_, index) => (
-                <div key={index} className={styles.dot}></div>
-              ))}
-            </div>
-            <i>
-              <b className={styles.b}>
-                &quot;Driven by Innovation, Fueled by Passion. Explore the Boundless Horizons of Robotics.&quot;
-              </b>
-            </i>
-          </div>
-        </div>
+      <div className={styles.yearSelector}>
+        <label htmlFor="year">Select Year: </label>
+        <select
+          id="year"
+          value={selectedYear}
+          onChange={handleYearChange}
+        >
+          <option value="2021-2025">2021-2025</option>
+          <option value="2020-2024">2020-2024</option>
+          <option value="2019-2023">2019-2023</option>
+          <option value="Developers">Developers</option>
+        </select>
+      </div>
 
-        <center className={styles.yearSelector}>
-          <label htmlFor="year">Select Year: </label>
-          <select id="year" value={selectedYear} onChange={handleYearChange}>
-            <option value="2021-2025">2021-2025</option>
-            <option value="2020-2024">2020-2024</option>
-            <option value="2019-2023">2019-2023</option>
-            <option value="Developer">Developers</option>
-          </select>
-        </center>
+      {isLogin && (
+        <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value={members.name}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="url"
+          name="linkedin"
+          placeholder="LinkedIn URL"
+          value={members.linkedin}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="url"
+          name="presentation"
+          placeholder="Image URL"
+          value={members.presentation}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="text"
+          name="position"
+          placeholder="Position"
+          value={members.position}
+          onChange={handleInputChange}
+          required
+        />
+        <button
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? "Adding..." : "Add Member"}
+        </button>
+      </form>
+      )}
 
-        {filteredTeamMembers.length === 0 ? (
-          <div className={styles.nomember}>No data is available</div>
-        ) : (
-          <div className={styles.members}>
-            {filteredTeamMembers.map((member, index) => (
-              <div 
-                key={index} 
-                className={styles.member}
-                ref={(el) => membersRef.current[index] = el}
-              >
-                <div>
-                  {/* Show loader while image is loading */}
-                  {loading[member.name] && (
-                    <div className={styles.loader}>Loading...</div>
+      {error && <div className={styles.error}>{error}</div>}
+
+      {loading ? (
+        <div className={styles.loader}>Loading...</div>
+      ) : teamMembers.length === 0 ? (
+        <div className={styles.nomember}>No team members found</div>
+      ) : (
+        <div className={styles.members}>
+          {teamMembers.map((member, index) => (
+            <div key={index} className={styles.member}>
+             <Image
+  src={member.presentation}
+  alt={member.name}
+  className={styles.photo}
+  width={200}
+  height={200}
+  onError={(e) => {
+    console.error('Image Load Failed:', {
+      url: member.presentation,
+      member: member
+    });
+  }}
+  placeholder="blur"
+  blurDataURL="/default-avatar.png"
+/>
+              <div className={styles.inData}>
+                <p className={styles.name}>{member.name}</p>
+                <p className={styles.position}>{member.position}</p>
+                <div className={styles.icons}>
+                  <p>{member.year}</p>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.icon}
+                    >
+                      <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                    </a>
                   )}
-                  <Image
-                    src={member.presentation || '/default.jpg'}
-                    alt={member.name}
-                    width={300}
-                    height={200}
-                    quality={100}
-                    priority
-                    className={styles.photo}
-                    onLoadingComplete={() => handleLoadingComplete(member.name)}
-                    onLoad={() => setLoading((prev) => ({ ...prev, [member.name]: true }))}
-                  />
-                </div>
-                <div className={styles.details}>
-                  <div className={styles.inData}>
-                    <p className={styles.name}>{member.name.substring(0, 18)}</p>
-                    <p className={styles.position}>{member.position}</p>
-                    <div className={styles.icons}>
-                      <p className={styles.year}>{member.year}</p>
-                      <div>
-                        {member.linkedin && (
-                          <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                            <FaLinkedinIn className={styles.icon} />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        )}
-      </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
     </>
   );
 };
 
-export default Page;
+export default Team;

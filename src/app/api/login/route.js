@@ -2,6 +2,7 @@ import dbconnect from "@/Libs/mongodb";
 import { NextResponse } from "next/server";
 import User from "@/Models/userModel.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken"
 
 export async function POST(request) {
   try {
@@ -32,17 +33,32 @@ export async function POST(request) {
       );
     }
 
-    return NextResponse.json(
+    const tokenData = {
+      id: user._id,
+      rigId: user.rigId
+    }
+    const token = jwt.sign(tokenData, process.env.TOKEN_SECRET, { expiresIn: '1d' })
+
+    const response = NextResponse.json(
       { 
         message: "Login successful", 
         success: true,
         user: {
           rigId: user.rigId,
-          
         }
       },
       { status: 200 }
     );
+
+    response.cookies.set("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production', 
+      sameSite: 'strict',
+      maxAge: 24 * 60 * 60 
+    });
+
+    return response;
+
   } catch (error) {
     console.error("Login error:", error);
     return NextResponse.json(
