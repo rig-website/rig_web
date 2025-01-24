@@ -14,6 +14,7 @@ import axios from 'axios';
 const Navbar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
   const pathname = usePathname();
+  const isActive = (path) => pathname === path;
   const router = useRouter();
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.auth.isLogin);
