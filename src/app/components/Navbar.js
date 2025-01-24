@@ -93,7 +93,7 @@ const Navbar = () => {
         {/* Alternate logo */}
         <div className={styles.logonew} ref={rigLogoRef}>
           <Link href="/">
-            <Image src="/image.png" width={110} height={60} alt="Logo" />
+            <Image src="/nitc_logo_icon2.svg" width={60} height={60} alt="Logo" />
           </Link>
         </div>
 

@@ -6,31 +6,14 @@
     min-height: calc(100vh - 5rem - 4.2vh); /* Ensure full viewport height */
     overflow: hidden;
     width: 100%; /* Full viewport width */
-   @media(max-width:600px){
- /* min-width: 53vh; */
-   }
 }
 
 .hero {
-    position: relative; /* Make sure the child elements can be positioned absolutely */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw; /* Full viewport width */
-    
-    @media(max-width: 1000px) {
-        width: 100vw; /* Ensure full width on smaller screens */
-    }
-
-    @media(max-width: 600px) {
-        width: 100vw; /* Full width on mobile */
-        /* height: 50vh; Restrict height to avoid stretching */
-    }
-
-    @media(max-width: 400px) {
-        width: 100vw; /* Full width on mobile */
-        /* height: 50vh;  */
-    }
 }
 
 .img {
@@ -45,7 +28,7 @@
 .right {
     position: absolute; /* Overlay on top of the image */
     top: 0;
-    right: 0; /* Position to the right edge */
+    right: 0;
     background-color: rgba(36, 39, 84, 0.7); /* Semi-transparent background */
     width: 30vw;
     height: 100%;
@@ -53,26 +36,7 @@
     z-index: 1; /* Ensure it appears above the image */
     display: flex;
     flex-direction: column;
-
-    @media(max-width: 1000px) {
-        /* width: 40vw; */
-    }
-
-    @media(max-width: 600px) {
-        width: 100%; /* Full width on mobile */
-        /* height: 50vh; Auto height for smaller screens */
-        text-align: justify;
-        justify-content: space-between; /* Align items to start by default */
-        padding-top: 50px;
-    }
-    
-    @media(max-width: 400px) {
-        width: 100%; /* Full width on smaller devices */
-        /* height: 50vh; Maintain height proportional */
-        padding: 10px; /* Reduced padding on small screens */
-        padding-top: 50px;
-        justify-content: space-between   ; /* Align content to the bottom */
-    }
+    justify-content: space-between; /* Default alignment */
 }
 
 .text {
@@ -84,18 +48,6 @@
     text-align: left;
     width: 100%;
     text-transform: capitalize;
-
-    @media(max-width: 900px) {
-        font-size: 18px;
-    }
-
-    @media(max-width: 600px) {
-        font-size: 15px; /* Larger text on smaller screens */
-    }
-
-    @media(max-width: 400px) {
-        font-size: 12px; /* Smaller font size for very small screens */
-    }
 }
 
 /* News ticker styles */
@@ -120,20 +72,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 35px;
-
-    @media(max-width: 900px) {
-        font-size: 15px;
-    }
-
-    @media(max-width: 600px) {
-        font-size: 12px;
-        line-height: 15px;
-    }
-
-    @media(max-width: 400px) {
-        font-size: 12px; /* Responsive font size for smaller screens */
-        line-height: 20px; /* Adjust line height */
-    }
 }
 
 /* Scroll animation */
@@ -143,5 +81,49 @@
     }
     100% {
         transform: translateY(-100%);
+    }
+}
+
+/* Media Queries */
+@media(max-width: 1100px) {
+    .right {
+        width: 40vw;
+    }
+}
+
+@media(max-width: 600px) {
+    .right {
+        width: 100%;
+        height: 50%;
+        padding-top: 50px;
+        text-align: justify;
+        transform: translateY(100%);
+    }
+
+    
+
+    .text {
+        font-size: 15px;
+    }
+
+    .newsItem {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media(max-width: 480px) {
+    .right {
+        padding: 10px;
+        padding-top: 50px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+    .newsItem {
+        font-size: 12px;
+        line-height: 20px;
     }
 }

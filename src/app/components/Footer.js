@@ -80,30 +80,20 @@ const Footer = () => {
     }
   }, []);
 
-  const navigationLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Events', path: '/events' },
-    { name: 'Team', path: '/team' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Achievements', path: '/achievements' }
-  ];
-
   return (
     <>
-    <center><div className={styles.text1}>contact us</div></center>
+    <center><div className={styles.text1}>CONTACT US</div></center>
     <div className={styles.contact}>
         <div className={styles.up}>
             <div className={styles.child1}>
                 <span>SOCIAL HANDLES</span>
             </div>
             <div className={styles.child2}>
-                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../insta.svg' ></img></a></div>
-                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../x.svg'></img></a></div>
-                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../linkedin.svg'></img></a></div>
-                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../discord.svg'></img></a></div>
-                    <div className={styles.icons}><a href='#' className={styles.icon}><img src='../mail.svg'></img></a></div>
+                    <div className={styles.icons}><a href='#'><img className={styles.icon} src='../insta.svg' ></img></a></div>
+                    <div className={styles.icons}><a href='#'><img className={styles.icon} src='../x.svg'></img></a></div>
+                    <div className={styles.icons}><a href='#'><img className={styles.icon} src='../linkedin.svg'></img></a></div>
+                    <div className={styles.icons}><a href='#'><img className={styles.icon} src='../discord.svg'></img></a></div>
+                    <div className={styles.icons}><a href='#'><img className={styles.icon} src='../mail.svg'></img></a></div>
             </div>
         </div>
         <div className={styles.middle}>
@@ -111,30 +101,31 @@ const Footer = () => {
             <   span className={styles.navigate}>NAVIGATION</span>
             </div>
             <div className={styles.boxmenu}>
-                <a className={styles.list}>HOME</a>
-                <a className={styles.list}>ABOUT US</a>
-                <a className={styles.list}>PROJECTS</a>
-                <a className={styles.list}>ACHEIVEMENTS</a>
-                <a className={styles.list}>EVENTS</a>
-                <a className={styles.list}>TEAM</a>
-                <a className={styles.list}>CONTACTS</a>
+                <a className={styles.list} href="/">HOME</a>
+                <a className={styles.list} href="/About">ABOUT US</a>
+                <a className={styles.list} href="/Projects">PROJECTS</a>
+                <a className={styles.list} href="/Achievements">ACHEIVEMENTS</a>
+                <a className={styles.list} href="/Events">EVENTS</a>
+                <a className={styles.list} href="/Eeam">TEAM</a>
+                <a className={styles.list} href="/Contacts">CONTACTS</a>
             </div>
         </div>
         <div className={styles.line}></div>
         <div className={styles.down}>
-            <div className={styles.add}>
-                <div className={styles.address}>ADDRESS</div>
-                MECHATRONICS/ROBOTICS LAB
-                <br/>
-                MECHANICAL ENGINEERING DEPARTMENT
-                <br/>
-                NATIONAL INSTITUTE OF TECHNOLOGY CALICUT, NITC CAMPUS
-                <br/>
-                P.O.- KOZHIKODE,KERALA,INDIA
-                <br/>
-                PIN- 673601
-            </div>
-            
+          <div className={styles.add}>
+           <div className={styles.address}>ADDRESS</div>
+           <p>
+            MECHATRONICS/ROBOTICS LAB
+            <br />
+            MECHANICAL ENGINEERING DEPARTMENT
+            <br />
+             NATIONAL INSTITUTE OF TECHNOLOGY CALICUT, NITC CAMPUS
+             <br />
+             P.O.- KOZHIKODE, KERALA, INDIA
+             <br />
+             PIN- 673601
+           </p>
+          </div>
         </div>
     </div>
     </>

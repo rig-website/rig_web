@@ -1,4 +1,17 @@
 /* Main navbar styles */
+.links a {  
+  color: inherit; 
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.links a.active { 
+  color: #3A5798 !important;
+}
+
+.links a:hover {
+  transform: scale(1.1);
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -64,6 +77,7 @@
 
 .link:hover {
   color: #3A5798;
+  font-weight: bolder;
 }
 
 .menuButton {
@@ -133,6 +147,12 @@
   .sidebar {
     width: 85%;
   }
+}
+
+@media (max-width: 380px) {
+  .navbar{
+    padding-left: 0rem;
+  }  
 
   .logo {
     display: none;
@@ -141,7 +161,7 @@
   .logonew {
     display: block;
   }
-
+  
 }
 
 /* Sidebar visibility */
@@ -231,3 +251,4 @@
 }
 
 /* Hide the mobile login button when on desktop */
+
