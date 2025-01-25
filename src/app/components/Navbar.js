@@ -23,18 +23,13 @@ const Navbar = () => {
   const logoRef = useRef(null);
   const rigLogoRef = useRef(null);
 
-  const toggleSidebar = () => {
-    setSidebarVisible(!isSidebarVisible);
-  };
-
-  const closeSidebar = () => {
-    setSidebarVisible(false);
-  };
-
   useEffect(() => {
-    const verifyToken = async () => {
+    const checkAuthStatus = async () => {
       try {
-        const response = await axios.get('/api/verify-token');
+        const response = await axios.get('/api/verify-token', {
+          withCredentials: true
+        });
+        
         if (response.data.valid) {
           dispatch(login());
         } else {
@@ -45,22 +40,32 @@ const Navbar = () => {
       }
     };
 
-    verifyToken();
+    checkAuthStatus();
   }, [dispatch]);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!isSidebarVisible);
+  };
+
+  const closeSidebar = () => {
+    setSidebarVisible(false);
+  };
 
   const handleAuth = async () => {
     if (isLogin) {
       try {
         await axios.post("/api/logout");
         dispatch(logout());
+        localStorage.removeItem('token');
         router.push('/');
       } catch (error) {
         console.error("Logout failed", error);
       }
     } else {
-      router.push('/login'); // Redirect only when the button is clicked
+      router.push('/login');
     }
   };
+
 
   useEffect(() => {
     const isDesktop = window.innerWidth >= 1024;
@@ -120,7 +125,7 @@ const Navbar = () => {
         {/* Desktop Login/Logout Button */}
         <button
           onClick={handleAuth}
-          className={styles.authButton} // Desktop version
+          className={styles.authButton}
         >
           {isLogin ? 'Logout' : 'Login'}
         </button>
@@ -180,7 +185,7 @@ const Navbar = () => {
           {/* Mobile Login/Logout Button */}
           <button
             onClick={handleAuth}
-            className={styles.sidebarAuthButton} // Mobile version
+            className={styles.sidebarAuthButton}
           >
             {isLogin ? 'Logout' : 'Login'}
           </button>
