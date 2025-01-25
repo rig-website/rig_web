@@ -39,7 +39,7 @@ const Page = () => {
   };
 
   return (
-    <Page>
+    <>
       <Navbar/>
       <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.container}>
@@ -72,7 +72,7 @@ const Page = () => {
         </button>
       </div>
     </form>
-    </Page>
+    </>
   );
 };
 
