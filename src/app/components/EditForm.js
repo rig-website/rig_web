@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import styles from '@/app/styles/edit.module.css';
+import Navbar from "./Navbar";
 
 export default function EditForm({ id, title, description }) {
   const router = useRouter();
@@ -37,11 +38,12 @@ export default function EditForm({ id, title, description }) {
 
   return (
     <>
+    <Navbar/>
     <div className={styles.form}>
       <div className={styles.container}>
         <h1 className={styles.title}>Edit Project</h1>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className={styles.titleName}>
             <label className={styles.label}>Title</label>
             <input
               value={newTitle}
@@ -52,15 +54,16 @@ export default function EditForm({ id, title, description }) {
             />
           </div>
           
-          <div>
+          <div className={styles.titleName}>
             <label className={styles.label}>Description</label>
-            <input
-              value={newDescription}
-              onChange={(e) => setNewDescription(e.target.value)}
-              className={styles.input}
-              type="text"
-              placeholder="Topic Description"
+            <div className={styles.titleName}>
+            <textarea
+             value={newDescription}
+             onChange={(e) => setNewDescription(e.target.value)}
+             className={styles.textarea}
+             placeholder="Topic Description"
             />
+          </div>
           </div>
           
           <button
