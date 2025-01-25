@@ -6,7 +6,6 @@
   flex-direction: column;
     padding: 2rem;
     background-color: #fff;
-    border-radius: 8px;
     color: #666;
     font-family: Arial, sans-serif;
     @media(max-width: 900px){

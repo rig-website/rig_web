@@ -1,3 +1,4 @@
+import Navbar from "@/app/components/Navbar";
 import EditForm from "../../components/EditForm";
 import axios from "axios";
 
@@ -35,11 +36,13 @@ export default async function Page({ params }) {
     const { title, description } = data.project;
 
     return (
+      <>
       <EditForm
         id={id}
         title={title}
         description={description}
       />
+      </>
     );
   } catch (error) {
     console.error("Error rendering page:", error);

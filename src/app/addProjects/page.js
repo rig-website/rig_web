@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import styles from '@/app/addEvents/style.module.css';
+import Navbar from '../components/Navbar';
 
 const Page = () => {
   const router = useRouter();
@@ -38,6 +39,8 @@ const Page = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.container}>
         <h2 className={styles.title}>Add Projects</h2>
@@ -69,6 +72,7 @@ const Page = () => {
         </button>
       </div>
     </form>
+    </>
   );
 };
 

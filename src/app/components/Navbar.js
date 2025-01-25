@@ -110,8 +110,8 @@ const Navbar = () => {
 
           {isLogin && (
             <>
-              <Link href="/addEvents" className={`${styles.sidebarLink} ${pathname === '/addEvents' ? styles.active : ''}`}>Add-Events</Link>
-              <Link href="/addProjects" className={`${styles.sidebarLink} ${pathname === '/addProjects' ? styles.active : ''}`}>Add-Projects</Link>
+              <Link rel="preload" href="/addEvents" className={`${styles.sidebarLink} ${pathname === '/addEvents' ? styles.active : ''}`}>Add-Events</Link>
+              <Link rel="preload" href="/addProjects" className={`${styles.sidebarLink} ${pathname === '/addProjects' ? styles.active : ''}`}>Add-Projects</Link>
             </>
           )}
 

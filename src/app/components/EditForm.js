@@ -36,6 +36,7 @@ export default function EditForm({ id, title, description }) {
   };
 
   return (
+    <>
     <div className={styles.form}>
       <div className={styles.container}>
         <h1 className={styles.title}>Edit Project</h1>
@@ -71,5 +72,6 @@ export default function EditForm({ id, title, description }) {
         </form>
       </div>
     </div>
+    </>
   );
 }

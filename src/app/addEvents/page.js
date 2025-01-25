@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import styles from '@/app/addEvents/style.module.css';
+import Navbar from '../components/Navbar';
 
 const Page = () => {
   const router = useRouter();
@@ -38,7 +39,9 @@ const Page = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <Page>
+      <Navbar/>
+      <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.container}>
         <h2 className={styles.title}>Add Event</h2>
         <label className={styles.label} htmlFor="title">
@@ -69,6 +72,7 @@ const Page = () => {
         </button>
       </div>
     </form>
+    </Page>
   );
 };
 

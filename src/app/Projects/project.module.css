@@ -3,12 +3,12 @@
 
 .root {
     background-color: #f9f9f9;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;  
-    overflow-y: auto;
+    /* overflow-y: hidden; */
 }
 .heading {
   
@@ -19,22 +19,24 @@
     color: #242754;
     margin-bottom: 3rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     margin: 0;
   }
   
 .container {
   display: flex;
   flex-direction: column;
-  max-height: 100vh;
   gap: 2rem;
   width: 60%;
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }
 
 .card {
   background-color: #555;
   color: white;
-  padding: 2rem;
+  padding: 0 .7rem .8rem 0;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -68,7 +70,7 @@
 }
 
 .description {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   font-family: Arial, sans-serif;
   line-height: 1.5;
 }
