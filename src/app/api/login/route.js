@@ -43,6 +43,7 @@ export async function POST(request) {
       { 
         message: "Login successful", 
         success: true,
+        token: token,
         user: {
           rigId: user.rigId,
         }

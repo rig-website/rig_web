@@ -1,33 +1,24 @@
-import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
+import { NextResponse } from 'next/server';
 
-export async function middleware(request) {
-  const token = request.cookies.get('token')?.value || '';
-  const protectedRoutes = ['/addEvents', '/addProjects'];
+export async function GET(request) {
+  try {
+    const token = request.cookies.get('token')?.value;
 
-  
-  if (protectedRoutes.some(route => request.nextUrl.pathname.startsWith(route))) {
     if (!token) {
-      return NextResponse.redirect(new URL('/login', request.url));
+      return NextResponse.json({ valid: false }, { status: 401 });
     }
 
-    try {
-      jwt.verify(token, process.env.TOKEN_SECRET);
-      return NextResponse.next();
-    } catch (error) {
-      
-      const response = NextResponse.redirect(new URL('/login', request.url));
-      response.cookies.set('token', '', { 
-        httpOnly: true, 
-        expires: new Date(0) 
-      });
-      return response;
-    }
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    
+    return NextResponse.json({ 
+      valid: true, 
+      user: {
+        id: decoded.id,
+        rigId: decoded.rigId
+      } 
+    });
+  } catch (error) {
+    return NextResponse.json({ valid: false }, { status: 401 });
   }
-
-  return NextResponse.next();
-}
-
-export const config = {
-  matcher: ['/addEvents', '/addProjects']
 }
